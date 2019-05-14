@@ -5,6 +5,13 @@
   - Usuários não logados devem ver apenas os processos "visiveis".
   - Usuários logados sem permissões devem ver apenas os processos "visiveis".
   - Usuários logados com a permissão "ver processo" em um curso devem poder ver os processos "ocultos" deste curso.
+- filtros:
+  - [Número]
+  - [Ano]
+  - [Tipo de curso]
+  - [Curso]
+  - [Tipo de vaga]
+  - [Tem chamada aberta]
 
 ## Observações sobre o sistema de permissões:
 - userRole:
