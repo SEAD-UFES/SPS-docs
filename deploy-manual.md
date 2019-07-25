@@ -230,7 +230,7 @@ Carregar seeds:
 #### 5.1.4. configurar server no PM2:
 
 Iniciar serviço e salvar na lista do PM2
-> $ pm2 start server.js --name=sps-server
+> $ pm2 start server.js --name=sps-server  
 > $ pm2 save
 
 Testar servidor:
