@@ -40,16 +40,16 @@ Troque o passwor se precisar e confirme o que você quiser confirmar no assitent
 
 Crie o banco de dados para o servidor do SPS.
 
-> /* CREATE NEW DATABASE */
+> /* CREATE NEW DATABASE */  
 > mysql\> CREATE DATABASE sps_production_v1;
 
-> /* CREATE MYSQL USER FOR DATABASE */
+> /* CREATE MYSQL USER FOR DATABASE */  
 > mysql\> CREATE USER 'sps_user'@'localhost' IDENTIFIED BY 'password';
 
-> /* GRANT Permission to User on Database */
+> /* GRANT Permission to User on Database */  
 > mysql\> GRANT ALL ON sps_production_v1.* TO 'db_user'@'localhost';
 
-> /* RELOAD PRIVILEGES */
+> /* RELOAD PRIVILEGES */  
 > mysql\> FLUSH PRIVILEGES;
 
 ## 2. Instalar GIT:
