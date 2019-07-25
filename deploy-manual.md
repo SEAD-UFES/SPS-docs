@@ -62,6 +62,9 @@ Instalar o git será necessário (dependencia do NPM).
 
 ## 3. Instalar NODE/NPM:
 
+https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-centos-7  
+https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-debian-9  
+
 ### 3.1. Instalar o node
 
 Procurar o link para os binarios linux para a instalação LTS
@@ -116,6 +119,9 @@ Testar servidor:
 
 ## 4. Instalar PM2:
 
+https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-centos-7  
+https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-debian-9  
+
 ### 4.1. Instalação do PM2:
 Instalar PM2:
 > $ sudo npm install pm2@latest -g
@@ -140,6 +146,9 @@ Iniciar app:
 Listar serviços:
 > $ pm2 list
 
+Salvar configuração atual para o próximo boot:
+> $ pm2 save
+
 App info:
 > $ pm2 info app (app_name, app_id)
 
@@ -149,15 +158,57 @@ Parar app:
 Excluir app:
 > $ pm2 delete app (app_name, app_id)
 
-## 5. Instalar server / Configurar PM2:
+## 5. Instalar SPS:
+
+Criar pasta onde o sistema vai funcionar (/home/user, /var/www, onde você quiser):
+> $ cd /var/www
+> $ mkdir sps-production
+> $ cd sps-production
+
+### 5.1. Instalar server / Configurar PM2:
+
+#### 5.1.1. Baixar projeto do git hub:
+
+Clonar o repositório:
+> $ git clone https://github.com/SEAD-UFES/publications.git
+
+Renomear a pasta e entrar:
+> $ mv publications server  
+> $ cd server
+
+Alterar para o branch desejado:
+> $ git branch development
+
+Baixar atualizações:
+> $ git pull
+
+#### 5.1.2. Configurar o servidor:
+
+Criar o arquivo database.json:
+> $ vim config/database.json
+
+Editar e salvar o arquivo (preciso aprender como funcionam as databases de production e teste):
+> {
+>    "development": {
+>      "username": "sps_user",
+>      "password": "sps_production_v1",
+>      "database": "password",
+>      "host": "127.0.0.1",
+>      "dialect": "mysql",
+>      "operatorsAliases": false
+>    }
+> }
+
+Criar o arquivo secrets.json:
+> $ vim config/secrets.json
+
+Editar e salvar o arquivo:
+>
 
 
 
-
-
-## 6. Instalar client / Configurar PM2:
-
-## 7. Instalar / Configurar Nginx:
+### 5.2. Instalar client / Configurar PM2:
+## 6. Instalar / Configurar Nginx:
 
 
 
