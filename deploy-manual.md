@@ -1,30 +1,43 @@
 
 # Como fazer o Deploy do SPS
 
-## Instalar / Configurar MySQL:
+## 1. Instalar / Configurar MySQL:
 
 https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-centos-7  
 https://tecadmin.net/install-mysql-5-7-centos-rhel  
 http://www.daniloaz.com/en/how-to-create-a-user-in-mysql-mariadb-and-grant-permissions-on-a-specific-database/  
 
-### Instalar MySQL:
+### 1.1. Instalar MySQL:
+
+1. Habilitar o repositório
+
+> -- On CentOS and RHEL 7 -- 
+> \# yum localinstall https://dev.mysql.com/get/mysql57-community-release-el7-9.noarch.rpm
+
+2. Instalar o MySQL
+
+> \# yum install mysql-community-server
+
+
+3. Iniciar o serviço
+4. Configuração Inicial
+5. Teste de login
+
+### 1.2. Configurar DB para o servidor:
 
 
 
+## 2. Instalar GIT:
 
-### Configurar DB para o servidor:
+## 3. Instalar Node:
 
-## Instalar GIT:
+## 4. Instalar PM2:
 
-## Instalar Node:
+## 5. Instalar server / Configurar PM2:
 
-## Instalar PM2:
+## 6. Instalar client / Configurar PM2:
 
-## Instalar server / Configurar PM2:
-
-## Instalar client / Configurar PM2:
-
-## Instalar / Configurar Nginx:
+## 7. Instalar / Configurar Nginx:
 
 
 
