@@ -1,5 +1,5 @@
 
-# Como fazer o Deploy do SPS
+# Como fazer o Deploy do SPS (CentOS 7)
 
 ## 1. Instalar / Configurar MySQL:
 
@@ -19,7 +19,7 @@ http://www.daniloaz.com/en/how-to-create-a-user-in-mysql-mariadb-and-grant-permi
 > \# yum install mysql-community-server
 
 Coletar o password temporario (Não precisou na minha instalação, o mysql ficou com a senha de root):
-> \# grep 'A temporary password' /var/log/mysqld.log |tail -1
+> \# grep 'A temporary password' /var/log/mysqld.log | tail -1
 
 3. Iniciar o serviço (habilitar o restart no boot também por garantia)
 
@@ -167,7 +167,10 @@ Criar pasta onde o sistema vai funcionar (/home/user, /var/www, onde você quise
 
 ### 5.1. Instalar server / Configurar PM2:
 
-#### 5.1.1. Baixar projeto do git hub:
+#### 5.1.1. Baixar projeto-server do git hub:
+
+Entrar no diretório do sistema:
+> $ cd /var/www/sps-production
 
 Clonar o repositório:
 > $ git clone https://github.com/SEAD-UFES/publications.git
@@ -181,6 +184,9 @@ Alterar para o branch desejado:
 
 Baixar atualizações:
 > $ git pull
+
+Instalar dependencias:
+> $ npm install
 
 #### 5.1.2. Configurar o servidor:
 
@@ -202,49 +208,112 @@ Editar e salvar o arquivo (preciso aprender como funcionam as databases de produ
 Criar o arquivo secrets.json:
 > $ vim config/secrets.json
 
-Editar e salvar o arquivo:
->[  
+Editar e salvar o arquivo (chave exadecimal?):
+>[
 >    {  
 >        "key": "jwt_secret",  
->        "value": "S3adS3l3"  
+>        "value": "DDDDDDDD"  
 >    }  
 >]  
 
+#### 5.1.3. migrar database:
 
+Se não tiver npx, instalar:
+> $ sudo npm install -g npx
 
+Migrar a database:
+> $ sudo npx sequelize db:migrate
+
+Carregar seeds:
+> $ sudo npx sequelize db:seed:all
+
+#### 5.1.4. configurar server no PM2:
+
+Iniciar serviço e salvar na lista do PM2
+> $ pm2 start server.js --name=sps-server
+> $ pm2 save
+
+Testar servidor:
+> $ curl http://127.0.0.1:3000
 
 ### 5.2. Instalar client / Configurar PM2:
+
+https://medium.com/@seanconrad_25426/setting-up-a-create-react-app-with-pm2-and-nginx-on-digitalocean-1fd9c060ac1f  
+https://andrewpark.ca/blog/create-and-deploy-a-react-app/  
+
+#### 5.2.1. Baixar projeto-client do git hub:
+
+Entrar no diretório do sistema:
+> $ cd /var/www/sps-production
+
+Clonar o repositório:
+> $ git clone https://github.com/SEAD-UFES/SPS-client.git
+
+Renomear a pasta e entrar:
+> $ mv publications client  
+> $ cd client
+
+Alterar para o branch desejado:
+> $ git branch development
+
+Baixar atualizações:
+> $ git pull
+
+Instalar dependencias:
+> $ npm install
+
+#### 5.2.2. Configurar o cliente:
+
+Editar o arquivo spsServer:
+> $ vim src/apis/spsServer.js
+
+Editar e salvar o arquivo (colocar o endereço que será o backend da aplicação):
+> import axios from "axios";  
+>  
+>export default axios.create({
+>  baseURL: "http://servidor.dev.br/api"
+>});
+
+#### 5.2.3. Fazer o "deployment" da aplicação:
+
+Instalar o serve:
+> $ npm install -g serve
+
+Observação sobre paths relativos: O deploy do create-react-app parte do principio que a aplicação será servida na raiz da url. se não for o caso, você deve fazer duas coisas:
+
+Coisa 1: Defina a home page no arquivo package.json.
+> "homepage": "https://your-domain/your-project/build"
+
+Coisa 2: Altere o BrowserRouter em App.js.
+> <BrowserRouter basename="/your-path"\>
+> <Link to="/about"/\> \/\/ renders <a href="/your-path/about"\>
+
+Criar a production build:
+> $ npm run build
+
+#### 5.2.4. configurar client no PM2:
+
+Entre no direitporio do client. e execute o comando:
+> $ pm2 ecosystem
+
+Edite o arquivo ecosystem.conig.js
+> $ vim ecosystem.conig.js
+
+Editar e salvar o arquivo:
+>apps : [  
+>     {  
+>       name          : 'sps-client',  
+>       script        : 'npx',  
+>       interpreter   : 'none',  
+>       args          : 'serve build -s',  
+>       env_production : {  
+>         NODE_ENV: 'production'  
+>       }  
+>     }  
+>   ]  
+
+Inicie o processo no pm2:
+> $ pm2 start ecosystem.conig.js
+
 ## 6. Instalar / Configurar Nginx:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-- process:
-  - Usuários não logados devem ver apenas os processos "visiveis".
-  - Usuários logados sem permissões devem ver apenas os processos "visiveis".
-  - Usuários logados com a permissão "ver processo" em um curso devem poder ver os processos "ocultos" deste curso.
-- filtros:
-  - [Número]
-  - [Ano]
-  - [Tipo de curso]
-  - [Curso]
-  - [Tipo de vaga]
-  - [Tem chamada aberta]
-
-## Observações sobre o sistema de permissões:
-- userRole:
-  - Cuidado ao dar permissões "globais" a um papel que será dado em um "curso". Exemplo: Dar permissão de "deletar usuário" ao papel de "coordenador" no curso de "matemática" pode dar permissões para este coordenador "deletar usuário" que não tem nenhuma relação com o curso do mesmo.
-  - Não podem existir 2 ou mais userRoles iguais.
-- roleType:
-  - O roleType "Administrador" não pode ter seu nome alterado.
-  - O nome do roleType deve ser único.
