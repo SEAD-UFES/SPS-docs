@@ -188,22 +188,28 @@ Criar o arquivo database.json:
 > $ vim config/database.json
 
 Editar e salvar o arquivo (preciso aprender como funcionam as databases de production e teste):
-> {
->    "development": {
->      "username": "sps_user",
->      "password": "sps_production_v1",
->      "database": "password",
->      "host": "127.0.0.1",
->      "dialect": "mysql",
->      "operatorsAliases": false
->    }
-> }
+> {  
+>    "development": {  
+>      "username": "sps_user",  
+>      "password": "sps_production_v1",  
+>      "database": "password",  
+>      "host": "127.0.0.1",  
+>      "dialect": "mysql",  
+>      "operatorsAliases": false  
+>    }  
+> }  
 
 Criar o arquivo secrets.json:
 > $ vim config/secrets.json
 
 Editar e salvar o arquivo:
->
+>[  
+>    {  
+>        "key": "jwt_secret",  
+>        "value": "S3adS3l3"  
+>    }  
+>]  
+
 
 
 
