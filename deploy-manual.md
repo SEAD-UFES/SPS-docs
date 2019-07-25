@@ -209,7 +209,7 @@ Criar o arquivo secrets.json:
 > $ vim config/secrets.json
 
 Editar e salvar o arquivo (chave exadecimal?):
->[
+>[  
 >    {  
 >        "key": "jwt_secret",  
 >        "value": "DDDDDDDD"  
@@ -293,11 +293,11 @@ Criar a production build:
 
 #### 5.2.4. configurar client no PM2:
 
-Entre no direitporio do client. e execute o comando:
+Entre no direitporio do client. Execute o comando:
 > $ pm2 ecosystem
 
-Edite o arquivo ecosystem.conig.js
-> $ vim ecosystem.conig.js
+Edite o arquivo ecosystem.config.js
+> $ vim ecosystem.config.js
 
 Editar e salvar o arquivo:
 >apps : [  
@@ -313,7 +313,136 @@ Editar e salvar o arquivo:
 >   ]  
 
 Inicie o processo no pm2:
-> $ pm2 start ecosystem.conig.js
+> $ pm2 start ecosystem.config.js
 
-## 6. Instalar / Configurar Nginx:
+## 6. Instalar / Configurar Nginx (Reverse proxy):
 
+#Instalar Nginx
+https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-on-centos-7
+https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04
+
+#Problema com SElinux
+https://stackoverflow.com/questions/22586166/why-does-nginx-return-a-403-even-though-all-permissions-are-set-properly#answer-26228135
+
+#React app
+https://medium.com/@seanconrad_25426/setting-up-a-create-react-app-with-pm2-and-nginx-on-digitalocean-1fd9c060ac1f
+https://andrewpark.ca/blog/create-and-deploy-a-react-app/
+
+### 6.1. instalar Nginx:
+
+Não me lembro se fiz isso:
+> $ sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+
+Executar os comandos:
+> $ sudo yum install nginx
+> $ sudo systemctl enable nginx
+
+Criar o diretórios de blocks dentro do nginx (Opcional, pode-se usar a pasta "/etc/nginx/conf.d"):
+> $ sudo mkdir /etc/nginx/sites-available
+> $ sudo mkdir /etc/nginx/sites-enabled
+
+Editar o arquivo de configuração do nginx
+> $ sudo nano /etc/nginx/nginx.conf
+
+No fim do block http\{\} adicionar: (para buscar os arquivos de configuração e aumentar a memoria para urls)
+> include /etc/nginx/sites-enabled/*.conf;
+> server_names_hash_bucket_size 64;
+
+### 6.2. Configurar as aplicações (server e client) no Nginx:
+
+Estamos configurando as duas aplicações na mesma url (servidor.dev.br) o client na Raiz "/" e o servidor em "/api" 
+
+criar um arquivo para url do servidor que vamos colocar no ar:
+vim /etc/nginx/sites-available/servidor.deb.br.conf
+
+Editar e salvar o arquivo:
+>server {
+>    listen 80;
+>    server_name servidor.dev.br www.servidor.dev.br
+>    
+>    access_log /var/log/nginx/servidor.dev.br.access.log;
+>    error_log /var/log/nginx/servidor.dev.br.error.log;
+>    
+>    //vamos configurar as locations aqui ...
+>
+>    error_page 500 502 503 504 /50x.html;
+>    location = /50x.html {
+>        root /usr/share/nginx/html;
+>    }
+>}
+
+#### 6.2.1 Configurar o server no Nginx:
+
+Editar o arquivo:
+> $ vim /etc/nginx/sites-available/servidor.deb.br.conf
+
+Adicionar e salvar a seguinte location no local indicado do código:
+> location /api {
+>
+>        proxy_pass http://127.0.0.1:3000;
+>        proxy_http_version 1.1;
+>        proxy_set_header Upgrade $http_upgrade;
+>        proxy_set_header Connection 'upgrade';
+>        proxy_set_header Host $host;
+>        proxy_cache_bypass $http_upgrade;
+>
+>    }
+
+Reiniciar o nginx:
+> $ systemctl restart nginx
+
+Testar a aplicação (verifique se o sistema devolve um objeto json):
+> $ curl servidor.dev.br/api/selectiveprocesses
+
+#### 6.2.2 Configurar o server no Nginx:
+
+Editar o arquivo:
+> $ vim /etc/nginx/sites-available/servidor.deb.br.conf
+
+Adicionar e salvar a seguinte location no local indicado do código:
+> location / {
+>
+>        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+>        proxy_set_header X-Forwarded-Proto $scheme;
+>        proxy_set_header X-Real-IP $remote_addr;
+>        proxy_set_header Host $http_host;
+>        proxy_pass http://127.0.0.1:5000;
+>        proxy_redirect off;
+>
+>    }
+
+Reiniciar o nginx:
+> $ systemctl restart nginx
+
+Testar a aplicação (verifique se o sistema devolve a landing page do client):
+> $ curl servidor.dev.br/
+
+#### 6.3 Problemas com o SELinux:
+
+https://stackoverflow.com/questions/22586166/why-does-nginx-return-a-403-even-though-all-permissions-are-set-properly#answer-26228135  
+
+Caso existam problemas de permissão nos logs, apesar das permissões estarem corretas, temos que verificar se as consfigurações do selinux estão ok para rodar a aplicação. Tive esse problema para servir o client do sistema.
+
+Desligar o SElinux (é possivel mudar essa configurações de forma permanente em /etc/sysconfig/selinux):
+> # getenforce  
+> # setenforce Permissive
+
+Faça o teste:
+> $ sudo systemctl restart nginx  
+> $ curl servidor.dev.br  
+
+Reabilite o SELinux
+> # setenforce Enforcing (depois de verificar o problema)
+
+Se for o SELinux:
+> # chcon -Rt httpd_sys_content_t /var/www/sps-production/client/build  
+> $ sudo systemctl restart nginx  
+> $ curl servidor.dev.br  
+
+Se ainda exitirem problemas:
+> # getsebool -a (procurar por httpd_can_network_connect)  
+> # setsebool -P httpd_can_network_connect on  
+> $ sudo systemctl restart nginx  
+> $ curl servidor.dev.br  
+
+___
