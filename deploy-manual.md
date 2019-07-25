@@ -94,7 +94,7 @@ Editar o visudo / Alterar linha adicionando "/usr/local/bin" para usuários do s
 Verificar node:
 > $ node -v
 
-### 3.2 Testar o node:
+### 3.2. Testar o node:
 
 Criar app de teste:
 > $ cd ~  
@@ -114,10 +114,46 @@ Iniciar aplicação:
 Testar servidor:
 > $ curl http://127.0.0.1:8080
 
-
 ## 4. Instalar PM2:
 
+### 4.1. Instalação do PM2:
+Instalar PM2:
+> $ sudo npm install pm2@latest -g
+
+Testar PM2 (com o app criado na seção anterior):
+> $ pm2 start hello.js
+
+Testar servidor:
+> $ curl http://127.0.0.1:8080
+
+Configurar pm2 como serviço e inicializar no boot (vai tentar localizar o sistema de serviços):
+> $ sudo pm2 startup
+
+Caso não encontre o sistema de serviços, você precisa especificar:
+> $ sudo pm2 startup systemd
+
+### 4.2. Comandos úteis:
+
+Iniciar app:
+> $ pm2 start app (app_name, app_id) ou (app_arquive para novos processos)
+
+Listar serviços:
+> $ pm2 list
+
+App info:
+> $ pm2 info app (app_name, app_id)
+
+Parar app:
+> $ pm2 stop app (app_name, app_id)
+
+Excluir app:
+> $ pm2 delete app (app_name, app_id)
+
 ## 5. Instalar server / Configurar PM2:
+
+
+
+
 
 ## 6. Instalar client / Configurar PM2:
 
