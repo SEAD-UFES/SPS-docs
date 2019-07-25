@@ -374,7 +374,7 @@ Editar e salvar o arquivo:
 #### 6.2.1 Configurar o server no Nginx:
 
 Editar o arquivo:
-> $ vim /etc/nginx/sites-available/servidor.deb.br.conf
+> $ vim /etc/nginx/sites-available/servidor.dev.br.conf
 
 Adicionar e salvar a seguinte location no local indicado do código:
 > location /api {
