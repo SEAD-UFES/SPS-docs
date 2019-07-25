@@ -3,9 +3,9 @@
 
 ## Instalar / Configurar MySQL:
 
-https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-centos-7
-https://tecadmin.net/install-mysql-5-7-centos-rhel
-http://www.daniloaz.com/en/how-to-create-a-user-in-mysql-mariadb-and-grant-permissions-on-a-specific-database/
+https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-centos-7  
+https://tecadmin.net/install-mysql-5-7-centos-rhel  
+http://www.daniloaz.com/en/how-to-create-a-user-in-mysql-mariadb-and-grant-permissions-on-a-specific-database/  
 
 ### Instalar MySQL:
 
