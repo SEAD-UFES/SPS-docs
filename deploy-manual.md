@@ -62,7 +62,7 @@ Instalar o git será necessário (dependencia do NPM).
 
 ## 3. Instalar NODE/NPM:
 
-###3.1. Instalar o node
+### 3.1. Instalar o node
 
 Procurar o link para os binarios linux para a instalação LTS
 https://nodejs.org/en/download/
@@ -91,8 +91,29 @@ Editar o visudo / Alterar linha adicionando "/usr/local/bin" para usuários do s
 
 > Defaults    secure_path = /sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin
 
-Testar node:
+Verificar node:
 > $ node -v
+
+### 3.2 Testar o node:
+
+Criar app de teste:
+> $ cd ~  
+> $ vim hello.js
+
+Editar o salvar o arquivo:
+> var http = require('http');
+> http.createServer(function (req, res) {
+>  res.writeHead(200, {'Content-Type': 'text/plain'});
+>  res.end('Hello World\n');
+> }).listen(8080, '127.0.0.1');
+> console.log('Server running at http://127.0.0.1:8080/');
+
+Iniciar aplicação:
+> $ node hello.js
+
+Testar servidor:
+> $ curl http://127.0.0.1:8080
+
 
 ## 4. Instalar PM2:
 
