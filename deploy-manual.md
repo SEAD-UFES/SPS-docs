@@ -7,7 +7,7 @@ https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-cento
 https://tecadmin.net/install-mysql-5-7-centos-rhel  
 http://www.daniloaz.com/en/how-to-create-a-user-in-mysql-mariadb-and-grant-permissions-on-a-specific-database/  
 
-### 1.1. Instalar MySQL:
+### 1.1. Instalar MySQL (5.7):
 
 1. Habilitar o repositório
 
@@ -18,14 +18,39 @@ http://www.daniloaz.com/en/how-to-create-a-user-in-mysql-mariadb-and-grant-permi
 
 > \# yum install mysql-community-server
 
+Coletar o password temporario (Não precisou na minha instalação o mysql ficou com a senha de root):
+> \# grep 'A temporary password' /var/log/mysqld.log |tail -1
 
-3. Iniciar o serviço
+3. Iniciar o serviço (habilitar o restart também por garantia)
+
+> \# systemctl enable mysqld
+> \# systemctl start mysqld
+
 4. Configuração Inicial
+
+> \# /usr/bin/mysql_secure_installation
+
+Troque o passwor se precisar e confirme o que você quiser confirmar no assitente.
+
 5. Teste de login
+
+> \# mysql -h localhost -u root -p 
 
 ### 1.2. Configurar DB para o servidor:
 
+Crie o banco de dados para o servidor do SPS.
 
+> /* CREATE NEW DATABASE */
+> mysql\> CREATE DATABASE sps_production_v1;
+
+> /* CREATE MYSQL USER FOR DATABASE */
+> mysql\> CREATE USER 'sps_user'@'localhost' IDENTIFIED BY 'password';
+
+> /* GRANT Permission to User on Database */
+> mysql\> GRANT ALL ON sps_production_v1.* TO 'db_user'@'localhost';
+
+> /* RELOAD PRIVILEGES */
+> mysql\> FLUSH PRIVILEGES;
 
 ## 2. Instalar GIT:
 
