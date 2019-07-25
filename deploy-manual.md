@@ -161,9 +161,9 @@ Excluir app:
 ## 5. Instalar SPS:
 
 Criar pasta onde o sistema vai funcionar (/home/user, /var/www, onde você quiser):
-> $ cd /var/www
-> $ mkdir sps-production
-> $ cd sps-production
+> $ cd /var/www  
+> $ mkdir sps-production  
+> $ cd sps-production  
 
 ### 5.1. Instalar server / Configurar PM2:
 
