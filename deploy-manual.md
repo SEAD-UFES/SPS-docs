@@ -286,7 +286,7 @@ Coisa 1: Defina a home page no arquivo package.json.
 
 Coisa 2: Altere o BrowserRouter em App.js.
 > <BrowserRouter basename="/your-path"\>
-> <Link to="/about"/\> \/\/ renders \<a href="/your-path/about"\>
+> <Link to="/about"/\> = href="/your-path/about"
 
 Criar a production build:
 > $ npm run build
