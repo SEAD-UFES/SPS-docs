@@ -424,24 +424,24 @@ https://stackoverflow.com/questions/22586166/why-does-nginx-return-a-403-even-th
 Caso existam problemas de permissão nos logs, apesar das permissões estarem corretas, temos que verificar se as consfigurações do selinux estão ok para rodar a aplicação. Tive esse problema para servir o client do sistema.
 
 Desligar o SElinux (é possivel mudar essa configurações de forma permanente em /etc/sysconfig/selinux):
-> # getenforce  
-> # setenforce Permissive
+> \# getenforce  
+> \# setenforce Permissive
 
 Faça o teste:
 > $ sudo systemctl restart nginx  
 > $ curl servidor.dev.br  
 
 Reabilite o SELinux
-> # setenforce Enforcing (depois de verificar o problema)
+> \# setenforce Enforcing (depois de verificar o problema)
 
 Se for o SELinux:
-> # chcon -Rt httpd_sys_content_t /var/www/sps-production/client/build  
+> \# chcon -Rt httpd_sys_content_t /var/www/sps-production/client/build  
 > $ sudo systemctl restart nginx  
 > $ curl servidor.dev.br  
 
 Se ainda exitirem problemas:
-> # getsebool -a (procurar por httpd_can_network_connect)  
-> # setsebool -P httpd_can_network_connect on  
+> \# getsebool -a (procurar por httpd_can_network_connect)  
+> \# setsebool -P httpd_can_network_connect on  
 > $ sudo systemctl restart nginx  
 > $ curl servidor.dev.br  
 
