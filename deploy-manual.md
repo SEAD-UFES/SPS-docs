@@ -222,10 +222,10 @@ Se não tiver npx, instalar:
 > $ sudo npm install -g npx
 
 Migrar a database:
-> $ sudo npx sequelize db:migrate
+> $ npx sequelize db:migrate
 
 Carregar seeds:
-> $ sudo npx sequelize db:seed:all
+> $ npx sequelize db:seed:all
 
 #### 5.1.4. configurar server no PM2:
 
