@@ -58,7 +58,7 @@ https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-applica
 
 Instalar o git será necessário (dependencia do NPM).
 
-> sudo yum install git
+> $ sudo yum install git
 
 ## 3. Instalar NODE/NPM:
 
@@ -68,22 +68,22 @@ Procurar o link para os binarios linux para a instalação LTS
 https://nodejs.org/en/download/
 
 Baixar o binário:
-> $ cd ~
+> $ cd ~  
 > $ wget https://nodejs.org/dist/v4.2.3/node-v4.2.3-linux-x64.tar.gz (link para os binarios do tutorial)
 
 Criar diretório e descompactar:
-> $ mkdir node
+> $ mkdir node  
 > $ tar xvf node-v*.tar.gz --strip-components=1 -C ./node
 
 Configurar prefixo para o npm criar links para os pacotes instalados: 
-> $ mkdir node/etc
+> $ mkdir node/etc  
 > $ echo 'prefix=/usr/local' > node/etc/npmrc
 
 Mover a pasta, alterar as permissões, colocar links que estarão disponiveis no PATH:
-> $ sudo mv node /opt/
-> $ sudo chown -R root: /opt/node
-> $ sudo ln -s /opt/node/bin/node /usr/local/bin/node
-> $ sudo ln -s /opt/node/bin/npm /usr/local/bin/npm
+> $ sudo mv node /opt/  
+> $ sudo chown -R root: /opt/node  
+> $ sudo ln -s /opt/node/bin/node /usr/local/bin/node  
+> $ sudo ln -s /opt/node/bin/npm /usr/local/bin/npm  
 
 Editar o visudo / Alterar linha adicionando "/usr/local/bin" para usuários do sudo:
 
