@@ -18,10 +18,10 @@ http://www.daniloaz.com/en/how-to-create-a-user-in-mysql-mariadb-and-grant-permi
 
 > \# yum install mysql-community-server
 
-Coletar o password temporario (Não precisou na minha instalação o mysql ficou com a senha de root):
+Coletar o password temporario (Não precisou na minha instalação, o mysql ficou com a senha de root):
 > \# grep 'A temporary password' /var/log/mysqld.log |tail -1
 
-3. Iniciar o serviço (habilitar o restart também por garantia)
+3. Iniciar o serviço (habilitar o restart no boot também por garantia)
 
 > \# systemctl enable mysqld
 > \# systemctl start mysqld
@@ -30,7 +30,7 @@ Coletar o password temporario (Não precisou na minha instalação o mysql ficou
 
 > \# /usr/bin/mysql_secure_installation
 
-Troque o passwor se precisar e confirme o que você quiser confirmar no assitente.
+Troque o password se precisar e confirme o que você quiser confirmar no assitente.
 
 5. Teste de login
 
@@ -85,10 +85,10 @@ Mover a pasta, alterar as permissões, colocar links que estarão disponiveis no
 > $ sudo ln -s /opt/node/bin/node /usr/local/bin/node
 > $ sudo ln -s /opt/node/bin/npm /usr/local/bin/npm
 
+Editar o visudo / Alterar linha adicionando "/usr/local/bin" para usuários do sudo:
 
-sudo visudo
+> $ sudo visudo
 
-Alterar linha adicionando "/usr/local/bin" para usuários do sudo:
 > Defaults    secure_path = /sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin
 
 Testar node:
