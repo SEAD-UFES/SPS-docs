@@ -167,7 +167,7 @@ Criar pasta onde o sistema vai funcionar (/home/user, /var/www, onde você quise
 
 ### 5.1. Instalar server / Configurar PM2:
 
-#### 5.1.1. Baixar projeto-server do git hub:
+#### 5.1.1. Baixar projeto-server do github:
 
 Entrar no diretório do sistema:
 > $ cd /var/www/sps-production
@@ -241,7 +241,7 @@ Testar servidor:
 https://medium.com/@seanconrad_25426/setting-up-a-create-react-app-with-pm2-and-nginx-on-digitalocean-1fd9c060ac1f  
 https://andrewpark.ca/blog/create-and-deploy-a-react-app/  
 
-#### 5.2.1. Baixar projeto-client do git hub:
+#### 5.2.1. Baixar projeto-client do github:
 
 Entrar no diretório do sistema:
 > $ cd /var/www/sps-production
