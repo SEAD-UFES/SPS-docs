@@ -356,20 +356,20 @@ criar um arquivo para url do servidor que vamos colocar no ar:
 vim /etc/nginx/sites-available/servidor.deb.br.conf
 
 Editar e salvar o arquivo:
->server {
->    listen 80;
->    server_name servidor.dev.br www.servidor.dev.br
->    
->    access_log /var/log/nginx/servidor.dev.br.access.log;
->    error_log /var/log/nginx/servidor.dev.br.error.log;
->    
->    //vamos configurar as locations aqui ...
->
->    error_page 500 502 503 504 /50x.html;
->    location = /50x.html {
->        root /usr/share/nginx/html;
->    }
->}
+>server {  
+>    listen 80;  
+>    server_name servidor.dev.br www.servidor.dev.br  
+>      
+>    access_log /var/log/nginx/servidor.dev.br.access.log;  
+>    error_log /var/log/nginx/servidor.dev.br.error.log;  
+>      
+>    //vamos configurar as locations aqui ...  
+>  
+>    error_page 500 502 503 504 /50x.html;  
+>    location = /50x.html {  
+>        root /usr/share/nginx/html;  
+>    }  
+>}  
 
 #### 6.2.1 Configurar o server no Nginx:
 
@@ -377,16 +377,16 @@ Editar o arquivo:
 > $ vim /etc/nginx/sites-available/servidor.dev.br.conf
 
 Adicionar e salvar a seguinte location no local indicado do código:
-> location /api {
->
->        proxy_pass http://127.0.0.1:3000;
->        proxy_http_version 1.1;
->        proxy_set_header Upgrade $http_upgrade;
->        proxy_set_header Connection 'upgrade';
->        proxy_set_header Host $host;
->        proxy_cache_bypass $http_upgrade;
->
->    }
+> location /api {  
+>  
+>        proxy_pass http://127.0.0.1:3000;  
+>        proxy_http_version 1.1;  
+>        proxy_set_header Upgrade $http_upgrade;  
+>        proxy_set_header Connection 'upgrade';  
+>        proxy_set_header Host $host;  
+>        proxy_cache_bypass $http_upgrade;  
+>  
+>    }  
 
 Reiniciar o nginx:
 > $ systemctl restart nginx
@@ -400,16 +400,16 @@ Editar o arquivo:
 > $ vim /etc/nginx/sites-available/servidor.deb.br.conf
 
 Adicionar e salvar a seguinte location no local indicado do código:
-> location / {
->
->        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
->        proxy_set_header X-Forwarded-Proto $scheme;
->        proxy_set_header X-Real-IP $remote_addr;
->        proxy_set_header Host $http_host;
->        proxy_pass http://127.0.0.1:5000;
->        proxy_redirect off;
->
->    }
+> location / {  
+>  
+>        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;  
+>        proxy_set_header X-Forwarded-Proto $scheme;  
+>        proxy_set_header X-Real-IP $remote_addr;  
+>        proxy_set_header Host $http_host;  
+>        proxy_pass http://127.0.0.1:5000;  
+>        proxy_redirect off;  
+>  
+>    }  
 
 Reiniciar o nginx:
 > $ systemctl restart nginx
