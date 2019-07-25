@@ -317,16 +317,16 @@ Inicie o processo no pm2:
 
 ## 6. Instalar / Configurar Nginx (Reverse proxy):
 
-#Instalar Nginx
-https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-on-centos-7
-https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04
+#Instalar Nginx  
+https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-on-centos-7  
+https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04  
 
-#Problema com SElinux
-https://stackoverflow.com/questions/22586166/why-does-nginx-return-a-403-even-though-all-permissions-are-set-properly#answer-26228135
+#Problema com SElinux  
+https://stackoverflow.com/questions/22586166/why-does-nginx-return-a-403-even-though-all-permissions-are-set-properly#answer-26228135  
 
-#React app
-https://medium.com/@seanconrad_25426/setting-up-a-create-react-app-with-pm2-and-nginx-on-digitalocean-1fd9c060ac1f
-https://andrewpark.ca/blog/create-and-deploy-a-react-app/
+#React app  
+https://medium.com/@seanconrad_25426/setting-up-a-create-react-app-with-pm2-and-nginx-on-digitalocean-1fd9c060ac1f  
+https://andrewpark.ca/blog/create-and-deploy-a-react-app/  
 
 ### 6.1. instalar Nginx:
 
