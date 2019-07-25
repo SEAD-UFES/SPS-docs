@@ -293,7 +293,7 @@ Criar a production build:
 
 #### 5.2.4. configurar client no PM2:
 
-Entre no direitporio do client. Execute o comando:
+Entre no diretório do client. Execute o comando:
 > $ pm2 ecosystem
 
 Edite o arquivo ecosystem.config.js
