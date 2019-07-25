@@ -23,8 +23,8 @@ Coletar o password temporario (Não precisou na minha instalação, o mysql fico
 
 3. Iniciar o serviço (habilitar o restart no boot também por garantia)
 
-> \# systemctl enable mysqld
-> \# systemctl start mysqld
+> \# systemctl enable mysqld  
+> \# systemctl start mysqld  
 
 4. Configuração Inicial
 
