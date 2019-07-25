@@ -54,7 +54,45 @@ Crie o banco de dados para o servidor do SPS.
 
 ## 2. Instalar GIT:
 
-## 3. Instalar Node:
+https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-centos-7  
+
+Instalar o git será necessário (dependencia do NPM).
+
+> sudo yum install git
+
+## 3. Instalar NODE/NPM:
+
+###3.1. Instalar o node
+
+Procurar o link para os binarios linux para a instalação LTS
+https://nodejs.org/en/download/
+
+Baixar o binário:
+> $ cd ~
+> $ wget https://nodejs.org/dist/v4.2.3/node-v4.2.3-linux-x64.tar.gz (link para os binarios do tutorial)
+
+Criar diretório e descompactar:
+> $ mkdir node
+> $ tar xvf node-v*.tar.gz --strip-components=1 -C ./node
+
+Configurar prefixo para o npm criar links para os pacotes instalados: 
+> $ mkdir node/etc
+> $ echo 'prefix=/usr/local' > node/etc/npmrc
+
+Mover a pasta, alterar as permissões, colocar links que estarão disponiveis no PATH:
+> $ sudo mv node /opt/
+> $ sudo chown -R root: /opt/node
+> $ sudo ln -s /opt/node/bin/node /usr/local/bin/node
+> $ sudo ln -s /opt/node/bin/npm /usr/local/bin/npm
+
+
+sudo visudo
+
+Alterar linha adicionando "/usr/local/bin" para usuários do sudo:
+> Defaults    secure_path = /sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin
+
+Testar node:
+> $ node -v
 
 ## 4. Instalar PM2:
 
