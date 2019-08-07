@@ -12,6 +12,11 @@
   - [Curso]
   - [Tipo de vaga]
   - [Tem chamada aberta]
+  
+- call:
+  - Criar o campo data de inicio da chamada.
+  - Data de encerramento deve ser maior que data de abertura.
+  - Duas chamadas não podem existir em um mesmo periodo de tempo.
 
 ## Observações sobre o sistema de permissões:
 - userRole:
