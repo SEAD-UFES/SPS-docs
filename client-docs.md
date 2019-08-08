@@ -17,6 +17,7 @@
   - Criar o campo data de inicio da chamada.
   - Data de encerramento deve ser maior que data de abertura.
   - Duas chamadas não podem existir em um mesmo periodo de tempo.
+  - Inscrições (inicio e fim) não podem mais ser campos obrigatórios.
 
 ## Observações sobre o sistema de permissões:
 - userRole:
