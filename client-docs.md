@@ -14,7 +14,7 @@
   - [Tem chamada aberta]
   
 - call:
-  - Criar o campo data de inicio da chamada.
+  - Criar o campo data de inicio da chamada. (ok)
   - Data de encerramento deve ser maior que data de abertura.
   - Duas chamadas não podem existir em um mesmo periodo de tempo.
   - Inscrições (inicio e fim) não podem mais ser campos obrigatórios.
