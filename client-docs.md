@@ -24,7 +24,7 @@
 ## Observações sobre o sistema de permissões:
 - userRole:
   - Cuidado ao dar permissões "globais" a um papel que será dado em um "curso". Exemplo: Dar permissão de "deletar usuário" ao papel de "coordenador" no curso de "matemática" pode dar permissões para este coordenador "deletar usuário" que não tem nenhuma relação com o curso do mesmo.
-  - Não podem existir 2 ou mais userRoles iguais.
+  - Não podem existir 2 ou mais userRoles iguais. (pendente)
 - roleType:
   - O roleType "Administrador" não pode ter seu nome alterado. (pendente)
   - Não podem existir outros RoleTypes chamadas "Administrador" (pendente)
