@@ -6,6 +6,7 @@
   - Usuários logados sem permissões devem ver apenas os processos "visiveis". (ok)
   - Usuários logados com a permissão "ver processo" em um curso devem poder ver os processos "ocultos" deste curso. (ok)
   - Processos não podem ter Numero/Ano iguais ao mesmo tempo (pendente)
+  - BUG: Acesse (sem login) /processes e tente filtrar por atribuição o back-end retorna um erro.
   
 - filtros:
   - [Número]
