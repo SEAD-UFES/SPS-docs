@@ -18,7 +18,7 @@
 - call:
   - Criar o campo data de inicio da chamada. (ok)
   - Data de encerramento deve ser maior que data de abertura. (pendente)
-  - Duas chamadas não podem existir em um mesmo periodo de tempo. (pendente)
+  - Duas chamadas não podem estar abertas em um mesmo periodo de tempo. (pendente)
   - Inscrições (inicio e fim) não podem mais ser campos obrigatórios. (pendente)
 
 ## Observações sobre o sistema de permissões:
