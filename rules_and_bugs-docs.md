@@ -7,7 +7,7 @@
   - Usuários logados com a permissão "ver processo" em um curso devem poder ver os processos "ocultos" deste curso. (ok)
   - Processos não podem ter Numero/Ano iguais ao mesmo tempo (pendente)
   - BK BUG: Acesse (sem login) /processes e tente filtrar por atribuição o back-end retorna um erro. (resolvido)
-  - BK BUG: Acesse (sem login /processes tente filtrar nível e curso ao mesmo tempo.
+  - BK BUG: Acesse (sem login /processes tente filtrar nível e curso ao mesmo tempo.  
   (node:13632) UnhandledPromiseRejectionWarning: TypeError: list.split is not a function
 [0]     at validIds (C:\Users\fernando.annecchini\Documents\projetos\SPS\server\app\helpers\listFilters.js:50:12)
 [0]     at api.list (C:\Users\fernando.annecchini\Documents\projetos\SPS\server\app\api\selectiveProcesses.js:65:21)
