@@ -193,17 +193,29 @@ Instalar dependencias:
 Criar o arquivo database.json:
 > $ vim config/database.json
 
-Editar e salvar o arquivo (preciso aprender como funcionam as databases de production e teste):
-> {  
->    "development": {  
->      "username": "sps_user",  
->      "password": "sps_production_v1",  
->      "database": "password",  
->      "host": "127.0.0.1",  
->      "dialect": "mysql",  
->      "operatorsAliases": false  
->    }  
-> }  
+Editar e salvar o arquivo (preciso aprender como funcionam as databases de production e teste). 
+
+> As entradas `dialectOptions`, `useUTC`, `dateString`, `typeCast` e `timezone` são necessárias para que as datas do frontend, backend e banco de dados estejam todas no horário local do Brasil.
+
+
+```
+{  
+   "development": {  
+     "username": "sps_user",  
+     "password": "sps_production_v1",  
+     "database": "password",  
+     "host": "127.0.0.1",  
+     "dialect": "mysql",  
+     "operatorsAliases": false,  
+     "dialectOptions": {  
+      "useUTC": false,  
+      "dateString": true,  
+      "typeCast": true  
+     },  
+     "timezone": "-03:00"  
+   }  
+}  
+```
 
 Criar o arquivo secrets.json:
 > $ vim config/secrets.json
