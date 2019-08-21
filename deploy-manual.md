@@ -209,7 +209,7 @@ Editar e salvar o arquivo (preciso aprender como funcionam as databases de produ
      "operatorsAliases": false,  
      "dialectOptions": {  
       "useUTC": false,  
-      "dateString": true,  
+      "dateStrings": true,  
       "typeCast": true  
      },  
      "timezone": "-03:00"  
