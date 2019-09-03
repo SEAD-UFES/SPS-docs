@@ -1,5 +1,11 @@
 # client-docs
 
+## Observações sobre comportamento de aviso:
+- notice:
+  - Um processo pode ter 0 ou 1 noticia.
+  - Usuários sem login / sem permissão: Veem o aviso se estiver visivel. Veem apenas o aviso se ele for exclusivo. Veem o aviso e os outros dados se ele não for exclusivo.
+  - Usuário com permissões: Sempre veem os avisos e o conteúdo.
+
 ## Observações sobre o comportamento dos processos:
 - selectiveprocess:
   - Usuários não logados devem ver apenas os processos "visiveis". (ok)
