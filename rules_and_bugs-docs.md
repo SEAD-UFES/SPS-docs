@@ -1,5 +1,8 @@
 # client-docs
 
+## Observações sobre a auth API:
+- BK BUG: authApi.authenticationRequired: Necesssário verificar se o o id decodificado existe na base de dados / devolde um user. Caso contrario, não insere um user na request, necessário para os proximos middlewares. 
+
 ## Observações sobre comportamento de aviso:
 - notice:
   - Um processo pode ter 0 ou 1 noticia.
