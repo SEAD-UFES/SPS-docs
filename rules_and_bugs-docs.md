@@ -8,7 +8,7 @@
   - Um processo pode ter 0 ou 1 noticia.
   - Usuários sem login / sem permissão: Veem o aviso se estiver visivel. Veem apenas o aviso se ele for exclusivo. Veem o aviso e os outros dados se ele não for exclusivo.
   - Usuário com permissões: Sempre veem os avisos e o conteúdo.
-  - É possivel listar a noticia(s) de um processo seletivo passando a id do processo como parametro: (/v1/notices?selectiProcess_id=xxx)
+  - É possivel listar a noticia(s) de um processo seletivo passando a id do processo como parametro: (/v1/notices?selectiveProcess_id=xxx)
 
 ## Observações sobre o comportamento dos processos:
 - selectiveprocess:
