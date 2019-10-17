@@ -1,5 +1,8 @@
 # client-docs
 
+## Observações sobre publicações:
+- Colocar uma publicação em um modal com observações em html e arquivo associado?
+
 ## Observações sobre inscrições:
 - Dados relevantes: (person, vacancy->call->process)
 - 
