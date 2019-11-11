@@ -32,6 +32,7 @@
 [0] (node:13632) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 3)
 (quando split é chamada ela já não exite mais?)
 ```
+  - BK BUG: Acesse /processes tente filtrar número do edital. Depois que os numeros de edital (fora do formato) foram inseridos esse filtro não funciona mais.
   
 - filtros:
   - [Número]
