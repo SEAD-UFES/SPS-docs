@@ -1,5 +1,8 @@
 # Wishlist
 
+## Promises
+A maioria das promisses está usando o estilo método .then, porém há alguns casos em que usamos async/await. O ideal é dicidirmos por um estilo ou outro, e refatormos a base de código para que somente esse estilo seja usado. No caso de decidirmos continuar com o estilo .then, precisamos modificar os casos de "promise hell" para usar encadeamentos de .then, e tratar os erros com um .catch final, ao invés do estilo atual aque é then( succeed-function, fail-function ). Mudar para async/await resolve esse problema, mas implica em refatorar uma maior parte do código do que manter o estilo .then.
+
 ## Barrar Duplicação de Nome Processo
 O backend está permitindo criar mais de um processo seletivo com o mesmo ano e número, é necessário checar se já existe essa combinação número/ano e barrar a criação de uma nova. Outra validação interessante de criar junto com essa é a que garante que todos os números de processo terão três dígitos (001, 002, etc).
 
