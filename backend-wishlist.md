@@ -15,6 +15,16 @@ O backend está permitindo criar mais de um processo seletivo com o mesmo ano e 
 essa combinação número/ano e barrar a criação de uma nova. Outra validação interessante de criar junto com essa é a que
 garante que todos os números de processo terão três dígitos (001, 002, etc).
 
+## Validações 
+
+Optamos por deixar validações em app/validadors, é necessario refatorar validações de outras partes do sistema para esse
+formato. Concentrando em /validators as avaliações de todos os pontos de entrada de dados, priorizando as partes do sistema
+que tem contado direto com usuário final. 
+
+  - revisar validações de números para remover float/hex/binário/notação científica (regex /^\d{4}$/)
+  - substituir isEmpty do lodash por helpers/is-empty 
+
+
 ## Simplificação de Permissões
 
 Atualmente as permissões de acesso estão divididas em várias tabelas (Papel, Tipo de Papel, Permissão, Ação, Alvo). É
