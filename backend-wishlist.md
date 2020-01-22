@@ -1,4 +1,4 @@
-cd SPS# Wishlist
+# Wishlist
 
 ## Promises
 
@@ -15,6 +15,16 @@ O backend está permitindo criar mais de um processo seletivo com o mesmo ano e 
 essa combinação número/ano e barrar a criação de uma nova. Outra validação interessante de criar junto com essa é a que
 garante que todos os números de processo terão três dígitos (001, 002, etc).
 
+## Validações 
+
+Optamos por deixar validações em app/validadors, é necessario refatorar validações de outras partes do sistema para esse
+formato. Concentrando em /validators as avaliações de todos os pontos de entrada de dados, priorizando as partes do sistema
+que tem contado direto com usuário final. 
+
+  - revisar validações de números para remover float/hex/binário/notação científica (regex /^\d{4}$/)
+  - substituir isEmpty do lodash por helpers/is-empty 
+
+
 ## Simplificação de Permissões
 
 Atualmente as permissões de acesso estão divididas em várias tabelas (Papel, Tipo de Papel, Permissão, Ação, Alvo). É
@@ -27,13 +37,13 @@ Permições/Permissions tem uma entrada para cada ação: acessar chamada, apaga
 listar chamadas... essas permissões poderiam ser centralizadas em uma só entrada na tabela de permissões, usando-se
 flags para cada uma das ações citadas.
 
-## Padronizar Erros e Códigos de Retorno
+## Padronizar Erros e Códigos de Retorno (WIP)
 
 Os erros de cada rota estão na pasta /app/errors e muitos deles não seguem um padrão de numeração para o tipo de erro,
 nem as mensagens. Também é importante evitar que mensagens internas do sistema sejam enviadas para o usuário final em
 caso de erro.
 
-## Refatorar a Autenticação
+## Refatorar a Autenticação (WIP)
 
 Há muita lógica nas rotas e nos middlewares de autenticação. É necessário refatorar o código para quebrar a complexidade
 em problemas menores, e mover as funções para algum dos módulos em `/app/helpers`, ou criar novos módulos. Usar alguma
@@ -61,7 +71,7 @@ interessante usar o mesmo modo de retorno de erros que as outras rotas/modelos u
 Algumas rotas retornam o id do novo elemento, outras só retornam um código de que a criação ocorreu sem problemas.
 Padronizar para todos retornarem o novo id.
 
-## Barrar Acesso a Processos Ocultos
+## Barrar Acesso a Processos Ocultos (OK)
 
 Se certificar que um usuário não consiga acessar um processo seletivo caso não tenha a permissão para acessá-lo. Caso o
 usuário não consiga listar um processo, ele também não deve ser capaz de acessar a página dele (se tentar acessar direto
