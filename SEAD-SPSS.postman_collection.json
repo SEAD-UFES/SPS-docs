@@ -1,0 +1,3659 @@
+{
+	"info": {
+		"_postman_id": "78609d21-6f73-4562-b25b-520f54ee7754",
+		"name": "SEAD-SPSS",
+		"description": "Sistema de Seleção\n---\n\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "InscriptionEvents",
+			"item": [
+				{
+					"name": "POST /v1/inscriptionevents",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "02c7462d-1272-468f-ae28-8cf800fc81a8",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"startDate\": \"2020-01-31\",\n\t\"endDate\": \"2020-01-25\",\n\t\"numberOfInscriptionsAllowed\": 3,\n\t\"oneInscriptionPerAssignment\": 2,\n\t\"oneInscriptionPerRegion\": 3,\n\t\"oneInscriptionPerRestriction\": 4\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/inscriptionevents",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"inscriptionevents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/inscriptionevents",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/inscriptionevents",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"inscriptionevents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/inscriptionevents/:id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":\"b8da8578-7a86-4619-aaa1-13a31cb15331\",\n\t\"name\": \"Tutor\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/inscriptionevents/5be8a4c4-de09-41aa-8e36-980a9b0e4106",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"inscriptionevents",
+								"5be8a4c4-de09-41aa-8e36-980a9b0e4106"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /v1/inscriptionevents/:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"numberOfInscriptionsAllowed\": 42\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/inscriptionevents/7f732bc1-4752-42a5-9a70-5136e5533f39",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"inscriptionevents",
+								"7f732bc1-4752-42a5-9a70-5136e5533f39"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL /v1/inscriptionevents/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":\"b8da8578-7a86-4619-aaa1-13a31cb15331\",\n\t\"name\": \"Tutor\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/inscriptionevents/7f732bc1-4752-42a5-9a70-5136e5533f38",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"inscriptionevents",
+								"7f732bc1-4752-42a5-9a70-5136e5533f38"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "1d8447f6-49b8-49c4-81cf-983d11b6ecc1",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b0580ce1-09b8-4bdf-afbf-0fe5173f3cf1",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Assignments",
+			"item": [
+				{
+					"name": "POST /v1/assignments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Coordenador\",\n\t\"description\": \"Candidatos a Coordenador de Curso.\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/assignments",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"assignments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/assignments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/assignments",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"assignments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /v1/assignments/:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":\"b8da8578-7a86-4619-aaa1-13a31cb15331\",\n\t\"name\": \"Tutor\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/assignments/c07d0b3e-d3f8-11e9-8442-18a99bfe6608",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"assignments",
+								"c07d0b3e-d3f8-11e9-8442-18a99bfe6608"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL /v1/assignments/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":\"b8da8578-7a86-4619-aaa1-13a31cb15331\",\n\t\"name\": \"Tutor\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/assignments/c07d0b3e-d3f8-11e9-8442-18a99bfe6608",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"assignments",
+								"c07d0b3e-d3f8-11e9-8442-18a99bfe6608"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Atribuições são os tipos de vagas sendo oferecidas, por exemplo aluno de gradução, aluno de pós-graduação, professor, designer instrucional, tutor à distância, tutor presencial. ",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "1d8447f6-49b8-49c4-81cf-983d11b6ecc1",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b0580ce1-09b8-4bdf-afbf-0fe5173f3cf1",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "POST /v1/auth/",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8a4c8394-046c-4725-a2ea-df1f7d41b65a",
+								"exec": [
+									"/* set global access token */",
+									"const body = pm.response.json()",
+									"pm.globals.set('token', body.access_token)",
+									"",
+									"/* actual tests */",
+									"const JWT_LENGTH = 189",
+									"",
+									"pm.test(\"responds with status 200\", () => {",
+									"    pm.response.to.have.status(200)",
+									"})",
+									"",
+									"pm.test(\"response must be json\", () => {",
+									"    pm.response.to.be.json",
+									"})",
+									"",
+									"pm.test(\"must return jwt\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.access_token.length).to.eql(JWT_LENGTH)",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"login\": \"admin@ufes.br\",\n\t\"password\": \"senhafraca123\"\n}\n"
+						},
+						"url": {
+							"raw": "{{url}}/v1/auth/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Rota de autenticação. ",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b2798ae7-911d-475c-b777-36efc8aa60f8",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "de44751b-40e2-44fe-9eb7-1251052f8b1c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Calls",
+			"item": [
+				{
+					"name": "POST /v1/calls",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"selectiveProcess_id\": \"2bcc16bc-77ca-47a4-a5c0-2a872556986c\",\n    \"number\": \"003\",\n    \"openingDate\": \"2022-01-01 00:00:00\",\n    \"endingDate\": \"2022-02-01 23:59:59\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/calls",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"calls"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/calls/:id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/calls/0a89c8fe-2c1b-41e1-8651-5ded72060199",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"calls",
+								"0a89c8fe-2c1b-41e1-8651-5ded72060199"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /v1/calls/:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"abcdeff5-6aeb-42c5-9c53-7e9500323bb4\",\n    \"number\": \"666\",\n    \"enrollmentOpeningDate\": null,\n    \"enrollmentClosingDate\": null,\n    \"openingDate\": \"2029-01-06 23:00:00\",\n    \"endingDate\": \"2029-02-07 22:59:59\",\n    \"selectiveProcess_id\": \"cfbf0b54-5ad2-4939-b2a1-f7483b719b43\",\n    \"Vacancies\": [],\n    \"link\": {\n        \"rel\": \"call\",\n        \"href\": \"/v1/calls/8a8661f5-6aeb-42c5-9c53-7e9500323bb4\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/calls/8a8661f5-6aeb-42c5-9c53-7e9500323bb4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"calls",
+								"8a8661f5-6aeb-42c5-9c53-7e9500323bb4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL /v1/calls/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/calls/df6443c4-0ce6-429b-8e65-de16d6f0652a",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"calls",
+								"df6443c4-0ce6-429b-8e65-de16d6f0652a"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Rotas de chamadas. \n\nDefine as dadas nas quais canditados poderão se inscrever em processos seletivos. Ou seja, definem as datas de abertura e fim dos períodos de inscrição.\n\nPossui as seguintes rotas\n\nPOST\t/v1/calls\t\tcria uma nova chamada\nGET \t/v1/calls/:id\trecupera uma chamada com o id informado \nPUT\t\t/v1/calls/:id\tatualiza a chamada com o id informado\nDEL\t\t/v1/calls/:id\tdeleta a rota com o id informado ",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "840e4b77-ba55-45de-bae0-d14487404744",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "69016308-b624-48a6-984e-f1820080cf11",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Cities/States",
+			"item": [
+				{
+					"name": "GET /v1/states",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/states/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"states",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/states/:data",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/states/0a89c8fe-2c1b-41e1-8651-5ded72060199",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"states",
+								"0a89c8fe-2c1b-41e1-8651-5ded72060199"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/cities/:id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/cities/01965a18-c5fa-4bf9-bd01-609f29b345e6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"cities",
+								"01965a18-c5fa-4bf9-bd01-609f29b345e6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/cities/:state/state",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/cities/ES/state",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"cities",
+								"ES",
+								"state"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4e8e455e-9e5c-4066-b96a-e3b1d85f4272",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "2b265ed9-0b10-4877-8308-b0f35b36c60c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Courses",
+			"item": [
+				{
+					"name": "POST /v1/courses",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Curso de Concertador de Chuveiro Elétrico\",\n\t\"description\": \"se é elétrico, é informática\",\n\t\"graduationType_id\": \"5e7bc2fd-4b1b-4c82-89bb-84b7601704db\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/courses/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"courses",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/courses",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/courses/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"courses",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "fc0a498c-fda2-4c6f-bcd6-69529ab75f5a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "77c90419-b675-459b-ab4d-77c9a478d1bd",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "GraduationTypes",
+			"item": [
+				{
+					"name": "POST localhost:3000/v1/graduationtypes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0350010d-8303-4d15-bc68-152fa5c137d2",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Mestrado\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/graduationtypes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"graduationtypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET localhost:3000/v1/graduationtypes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0350010d-8303-4d15-bc68-152fa5c137d2",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/v1/graduationtypes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"graduationtypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET localhost:3000/v1/graduationtypes/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0350010d-8303-4d15-bc68-152fa5c137d2",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/v1/graduationtypes/9d42f1ff-478a-4b39-b07f-f8356b4fd4b3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"graduationtypes",
+								"9d42f1ff-478a-4b39-b07f-f8356b4fd4b3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT localhost:3000/v1/graduationtypes/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0350010d-8303-4d15-bc68-152fa5c137d2",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"name\": \"Doutorado\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/graduationtypes/06279c5b-32e3-466a-b10a-09a36dc93531",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"graduationtypes",
+								"06279c5b-32e3-466a-b10a-09a36dc93531"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL localhost:3000/v1/graduationtypes/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0350010d-8303-4d15-bc68-152fa5c137d2",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/v1/graduationtypes/99c3b127-98bf-45a5-bad1-6bc1c33001b3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"graduationtypes",
+								"99c3b127-98bf-45a5-bad1-6bc1c33001b3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4a0ea838-e6f2-4298-801a-0b5cd7a17cda",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "88b6c8da-ed11-426e-8365-8f4949ef5bbe",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "People",
+			"item": [
+				{
+					"name": "POST /v1/people/",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"cpf\": \"445.724.590-96\",\n\t\"name\": \"Administrador\",\n\t\"surname\": \"da Administração e Silva\",\n\t\"nationality\":\"Brasileiro\",\n\t\"ethnicity\": \"pardo\",\n\t\"civilStatus\": \"solteiro\",\n\t\"gender\":\"outro\",\n\t\"user_id\": \"03d32016-56eb-4b8a-94d1-2d04a9e716a4\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/people/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"people",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /v1/people/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6c044da6-e904-4f4d-96ca-66c1628e62cb",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Pessoa1 (atualizado para teste)\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/people/f4d51330-ddae-476d-ad18-bec4cd887a4e",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"people",
+								"f4d51330-ddae-476d-ad18-bec4cd887a4e"
+							]
+						},
+						"description": "O id esperado é o id do usuário associado a pessoa, e não o id da pessoa em si. "
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/people/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6c044da6-e904-4f4d-96ca-66c1628e62cb",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/people/51654e09-9bd4-45fb-af48-d69fd350e277",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"people",
+								"51654e09-9bd4-45fb-af48-d69fd350e277"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/people/options",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/people/options",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"people",
+								"options"
+							]
+						},
+						"description": "Opções para criação de cadastros de pessoas, inclui etnicidades, estados civís e gêneros.\n\nEssa rota, assim como a maioria, só pode ser acessada se o usuário estiver logado (ou seja, possui um token de acesso válido)."
+					},
+					"response": []
+				},
+				{
+					"name": "DEL /v1/people/:id -- não existe",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6c044da6-e904-4f4d-96ca-66c1628e62cb",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/v1/people/7a094210-f99f-4ec9-81d0-b4de3b491c43",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"people",
+								"7a094210-f99f-4ec9-81d0-b4de3b491c43"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Pessoas são associadas as usuários. O usuários contém os dados de login, há usuários que não tem pessoas associadas, como administradores e outro tipo de contas institucionais. Usários de contas não institucionais, tem seus dados pessoais armazenados em Pessoa (Person/People).",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4715a9d5-4688-45c2-8c0b-239816de718f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "9a1cb50c-2d6a-4999-98b8-3cee9b39b851",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Permissions",
+			"item": [
+				{
+					"name": "GET /v1/permissions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/permissions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"permissions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /v1/permissions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"permission_test\",\n\t\"description\": \"Permissão para fazer um post na rota de teste.\",\n\t\"target_id\": \"6f570b1e-87ac-453d-9287-5955270d96ad\",\n        \"action_id\": \"0e150b62-3a6e-460b-86cc-929bb5738a47\"\n}\n"
+						},
+						"url": {
+							"raw": "{{url}}/v1/permissions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"permissions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Publications",
+			"item": [
+				{
+					"name": "POST /v1/publications",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "publicationType_id",
+									"value": "480146ec-1215-4112-9250-65c6e8f449e1",
+									"type": "text"
+								},
+								{
+									"key": "selectiveProcess_id",
+									"value": "74914b59-a571-4d12-b665-a575bd8e34cb",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "esse é o titulo da publicacao",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "publicação teste 2 com upload de pdf",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/edo9k/Área de Trabalho/curso-introducao-a-poo-10h.pdf"
+								},
+								{
+									"key": "valid",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2019-09-11 00:00:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/publications",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"publications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/publications/:id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/publications/13fddf9e-79fa-48a9-a388-295f754ce6c8",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"publications",
+								"13fddf9e-79fa-48a9-a388-295f754ce6c8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /v1/publications/:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"testando com upload de arquivo 4 EDITADO\",\n    \"valid\": false\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/publications/13fddf9e-79fa-48a9-a388-295f754ce6c8",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"publications",
+								"13fddf9e-79fa-48a9-a388-295f754ce6c8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL /v1/publications/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/publications/549647cc-75a0-42bf-b944-da4fadfb7681",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"publications",
+								"549647cc-75a0-42bf-b944-da4fadfb7681"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PublicationTypes",
+			"item": [
+				{
+					"name": "POST localhost:3000/v1/publicationtypes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0350010d-8303-4d15-bc68-152fa5c137d2",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Tipo de Publicação Novo, Teste\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/publicationtypes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"publicationtypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET localhost:3000/v1/publicationtypes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0350010d-8303-4d15-bc68-152fa5c137d2",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/v1/publicationtypes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"publicationtypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET localhost:3000/v1/publicationtypes/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0350010d-8303-4d15-bc68-152fa5c137d2",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/v1/publicationtypes/458bd8c1-66ce-488e-b493-ef3d1859f468",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"publicationtypes",
+								"458bd8c1-66ce-488e-b493-ef3d1859f468"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT localhost:3000/v1/publicationtypes/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0350010d-8303-4d15-bc68-152fa5c137d2",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Tipo de Publicação Teste (atualização)\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/publicationtypes/458bd8c1-66ce-488e-b493-ef3d1859f468",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"publicationtypes",
+								"458bd8c1-66ce-488e-b493-ef3d1859f468"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL localhost:3000/v1/publicationtypes/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0350010d-8303-4d15-bc68-152fa5c137d2",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/v1/publicationtypes/458bd8c1-66ce-488e-b493-ef3d1859f468",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"publicationtypes",
+								"458bd8c1-66ce-488e-b493-ef3d1859f468"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4a0ea838-e6f2-4298-801a-0b5cd7a17cda",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "88b6c8da-ed11-426e-8365-8f4949ef5bbe",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Regions",
+			"item": [
+				{
+					"name": "POST /v1/regions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Sauerkraut am Meer\",\n\t\"description\": \"Polo de Apoio Presencial UAB\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/regions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"regions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /v1/regions/:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Afonso Cláudio 19987\",\n\t\"description\": \"Polo de Apoio Presencial UAB de Afonso Cláudio\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/regions/db8ecbd0-1366-4b82-bc22-95e2bae2da46",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"regions",
+								"db8ecbd0-1366-4b82-bc22-95e2bae2da46"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL /v1/regions/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Afonso Cláudio 19987\",\n\t\"description\": \"Polo de Apoio Presencial UAB de Afonso Cláudio\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/regions/db8ecbd0-1366-4b82-bc22-95e2bae2da46",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"regions",
+								"db8ecbd0-1366-4b82-bc22-95e2bae2da46"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/regions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/regions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"regions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Restrictions",
+			"item": [
+				{
+					"name": "POST /v1/restrictions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Candidatos com Doutorado\",\n\t\"description\": \"Vagas destinadas a candidatos com doutorado.\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/restrictions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"restrictions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/restrictions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/restrictions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"restrictions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /v1/restrictions/:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"teste [editado]\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/restrictions/455ecede-f264-4930-a7cc-362bb3a56dfd",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"restrictions",
+								"455ecede-f264-4930-a7cc-362bb3a56dfd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL /v1/restrictions/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/v1/restrictions/455ecede-f264-4930-a7cc-362bb3a56dfd",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"restrictions",
+								"455ecede-f264-4930-a7cc-362bb3a56dfd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RolePermissions",
+			"item": [
+				{
+					"name": "POST /v1/rolepermissions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"roleType_id\": \"065361eb-da24-4853-904c-0504c3cf3152\",\n    \"permission_id\": \"51119f49-bb3f-4f66-82a0-88a35a7caaee\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/rolepermissions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"rolepermissions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/rolepermissions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"roleType_id\": \"046caf7b-f596-4ccf-822f-879a9c4fb104\",\n\t\"user_id\": \"d8be9623-0d78-4345-ad11-25b3e48b0c41\",\n\t\"course_id\": \"c62a0140-c570-415a-a5c1-2a82a7803bf1\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/rolepermissions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"rolepermissions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/rolepermissions/:id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/rolepermissions/61378a2c-d9a0-4d83-af06-3eb3ec0ad696",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"rolepermissions",
+								"61378a2c-d9a0-4d83-af06-3eb3ec0ad696"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL /v1/rolepermissions/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"roleType_id\": \"046caf7b-f596-4ccf-822f-879a9c4fb104\",\n\t\"user_id\": \"d8be9623-0d78-4345-ad11-25b3e48b0c41\",\n\t\"course_id\": \"c62a0140-c570-415a-a5c1-2a82a7803bf1\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/rolepermissions/c9ed81d2-8fbb-4149-be2a-966d02e2e13b",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"rolepermissions",
+								"c9ed81d2-8fbb-4149-be2a-966d02e2e13b"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e4b81cc6-3d22-421a-a62f-50b5a5d91305",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "9069fa02-0795-4cb4-9897-7c45fc9dbe82",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "RoleTypes",
+			"item": [
+				{
+					"name": "POST /v1/roletypes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Coordenador XYZ\",\n\t\"description\": \"Coordenador de curso.\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/roletypes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"roletypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/roletypes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Coordenador\",\n\t\"description\": \"Coordenador de curso.\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/roletypes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"roletypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/roletypes/:id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Coordenador\",\n\t\"description\": \"Coordenador de curso.\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/roletypes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"roletypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /v1/roletypes/:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Coordenador ZZZ\",\n\t\"description\": \"Coordenador de curso. [editado]\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/roletypes/fe19046b-f607-410e-a492-6985610676a3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"roletypes",
+								"fe19046b-f607-410e-a492-6985610676a3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL /v1/roletypes/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Coordenador ZZZ\",\n\t\"description\": \"Coordenador de curso. [editado]\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/roletypes/fe19046b-f607-410e-a492-6985610676a3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"roletypes",
+								"fe19046b-f607-410e-a492-6985610676a3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"item": [
+				{
+					"name": "POST /v1/register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"cpf\": \"936.440.070-47\",\n\t\"name\": \"Testexxx\",\n\t\"surname\": \"Teste\",\n\t\"User\":{\n\t\t\"login\": \"testasdfaasdfasdfsdf007@teste.com\",\n\t\t\"password\": \"123456\",\n\t\t\"userType\": \"sead\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/v1/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SelectiveProcesses",
+			"item": [
+				{
+					"name": "POST /v1/selectiveprocesses",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"number\": \"produtores de gado 5\",\n\t\"year\": \"2020\",\n\t\"description\": \"processo seletivo para provimento de vaga ou algo do tipo\",\n\t\"visible\": true,\n\t\"course_id\": \"0304e52a-e720-4c65-9c9f-c35d4e84e30c\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/selectiveprocesses/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"selectiveprocesses",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/selectiveprocesses",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"description": "token de acesso jwt",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/selectiveprocesses/?",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"selectiveprocesses",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": "página atual",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "5",
+									"description": "elementos a serem mostrados por página",
+									"disabled": true
+								},
+								{
+									"key": "years",
+									"value": "2019",
+									"description": "filtrar por essa lista de anos",
+									"disabled": true
+								},
+								{
+									"key": "numbers",
+									"value": "999",
+									"description": "filtrar por essa lista de números de processo (000-999)",
+									"disabled": true
+								},
+								{
+									"key": "graduationType",
+									"value": "52f858de-6f7f-4584-85aa-1ad5b9a1bb24,52f858de-6f7f-4584-85aa-invalido, , , 0, not, não",
+									"description": "filtrar por esses tipos de graduação (uuids)",
+									"disabled": true
+								},
+								{
+									"key": "course",
+									"value": "944e167e-35c9-4c58-8b8d-2db2c646da68,16c54285-affa-4674-981b-invalido, blah,,, , blah, não",
+									"description": "filtrar por esses cursos (uuids)",
+									"disabled": true
+								},
+								{
+									"key": "assignment",
+									"value": "b7f6bce0-1571-4035-9650-ac9823675a11,inválido tbm, etc",
+									"description": "filtrar por esse tipo de vaga (uuids)",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/selectiveprocesses/:id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/selectiveprocesses/02f7ede4-d313-4906-9f6d-3f1b91294bf6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"selectiveprocesses",
+								"02f7ede4-d313-4906-9f6d-3f1b91294bf6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /v1/selectiveprocesses/:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"course_id\": \"0304e52a-e720-4c65-9c9f-c35d4e84e30c\",\n    \"number\": \"produtores de gado 4\",\n    \"year\": \"2020\",\n    \"description\": \"processo seletivo para provimento de vaga ou algo do tipo\",\n    \"visible\": true,\n    \"nonExistentField\": \"i dont't exist, you know\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/selectiveprocesses/c1ee6cec-f5a9-421d-9400-e6ec1b412fd9",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"selectiveprocesses",
+								"c1ee6cec-f5a9-421d-9400-e6ec1b412fd9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL /v1/selectiveprocesses/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/selectiveprocesses/84f11f46-7061-46ff-ac1b-2c6d9baecfc1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"selectiveprocesses",
+								"84f11f46-7061-46ff-ac1b-2c6d9baecfc1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Rotas que permitem listar processo seletivos para usuários externos (não logados e sem privilégios administrivos), e também, criar, editar, listar ou excluir processos seletivos para usuários com privilégios administrativos. ",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "214a7360-306c-49b1-a13e-2d4859025495",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "5024d5fb-3b7f-4fd6-83c6-54a08260cc79",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Steps",
+			"item": [
+				{
+					"name": "POST /v1/steps",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"stepType_id\" : \"3080563f-5739-4ce7-876a-1d8233cedbe5\",\n\t\"call_id\": \"8a8661f5-6aeb-42c5-9c53-7e9500323bb4\",\n\t\"resultDate\": \"2020-01-20T06:00:00-0300\",\n\t\"openAppealDate\": \"2020-01-21T06:00:00-0300\",\n\t\"limitAppealDate\": \"2020-02-21T06:00:00-0300\",\n\t\"resultAfterAppealDate\": \"2020-03-21T06:00:00-0300\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/steps",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"steps"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/steps/:id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"stepType_id\" : \"623c5aa6-fac4-41ba-b5e2-79636566ba78\",\n\t\"call_id\": \"219737ab-fffc-43a7-bf70-dcc1c34df792\",\n\t\"resultDate\": \"2020-01-20T06:00:00-0300\",\n\t\"openAppealDate\": \"2020-01-21T06:00:00-0300\",\n\t\"limitAppealDate\": \"2020-02-21T06:00:00-0300\",\n\t\"resultAfterAppealDate\": \"2020-03-21T06:00:00-0300\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/steps/d06d744a-a338-4aa1-bbf3-a383de57097a",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"steps",
+								"d06d744a-a338-4aa1-bbf3-a383de57097a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /v1/steps/:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"number\": 666,\n\t\"resultDate\": \"2021-01-20T06:00:00-0300\",\n\t\"openAppealDate\": \"2021-01-21T06:00:00-0300\",\n\t\"limitAppealDate\": \"2021-02-21T06:00:00-0300\",\n\t\"resultAfterAppealDate\": \"2021-03-21T06:00:00-0300\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/steps/d06d744a-a338-4aa1-bbf3-a383de57097a",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"steps",
+								"d06d744a-a338-4aa1-bbf3-a383de57097a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL /v1/steps/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/steps/d06d744a-a338-4aa1-bbf3-a383de57097a",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"steps",
+								"d06d744a-a338-4aa1-bbf3-a383de57097a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "StepTypes",
+			"item": [
+				{
+					"name": "POST /v1/steptypes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Etapa de Selecionar Coisas 2\",\n\t\"description\": \"Primeira etapa\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/steptypes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"steptypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/steptypes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/steptypes/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"steptypes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/steptypes/:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Etapa 666 [atualizada]\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/steptypes/84179b6f-d9c0-4ff8-9e40-fc24de78e69b",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"steptypes",
+								"84179b6f-d9c0-4ff8-9e40-fc24de78e69b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL /v1/steptypes/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/steptypes/84179b6f-d9c0-4ff8-9e40-fc24de78e69b",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"steptypes",
+								"84179b6f-d9c0-4ff8-9e40-fc24de78e69b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Targets",
+			"item": [
+				{
+					"name": "POST /v1/targets",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Teste API\",\n\t\"urn\": \"/v1/teste\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/targets",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"targets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/targets",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/targets",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"targets"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "0a298e43-b417-42d6-9780-4bfffee3dd23",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e9e081f4-9116-4706-83c7-e716250e5493",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "POST /v1/users/ ",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"login\": \"teste@teste.com\",\n\t\"password\": \"teste123\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/users/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/users/ ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6c044da6-e904-4f4d-96ca-66c1628e62cb",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/users?limit=10&page=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/users/minimal",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6c044da6-e904-4f4d-96ca-66c1628e62cb",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/users/minimal",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"users",
+								"minimal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/users/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6c044da6-e904-4f4d-96ca-66c1628e62cb",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/users/f4d51330-ddae-476d-ad18-bec4cd887a4e",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"users",
+								"f4d51330-ddae-476d-ad18-bec4cd887a4e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/me/",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "12e2369a-c125-44a2-a257-dd4086aac0a3",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/me/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"me",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL /v1/users/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6c044da6-e904-4f4d-96ca-66c1628e62cb",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/v1/users/f4d51330-ddae-476d-ad18-bec4cd887a4e",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"users",
+								"f4d51330-ddae-476d-ad18-bec4cd887a4e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserRoles",
+			"item": [
+				{
+					"name": "GET /v1/userroles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6c044da6-e904-4f4d-96ca-66c1628e62cb",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/userroles",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"userroles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /v1/userroles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6c044da6-e904-4f4d-96ca-66c1628e62cb",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_id\": \"6731bb3a-31a1-443e-9494-75aba1d1f3c7\",\n\t\"roleType_id\": \"065361eb-da24-4853-904c-0504c3cf3152\"\n}\n\n\n"
+						},
+						"url": {
+							"raw": "{{url}}/v1/userroles",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"userroles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/userroles/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6c044da6-e904-4f4d-96ca-66c1628e62cb",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/userroles/92bb92cf-4c2a-46f2-bf56-df31d2cd672e",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"userroles",
+								"92bb92cf-4c2a-46f2-bf56-df31d2cd672e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL /v1/userroles/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6c044da6-e904-4f4d-96ca-66c1628e62cb",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/userroles/939fad31-8dd8-47c4-ace9-95d7019e658a",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"userroles",
+								"939fad31-8dd8-47c4-ace9-95d7019e658a"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "39004846-982e-4d17-a5c1-58afa5ff266f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "ae92f45c-8895-4c99-bea7-9ef90499f53f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Vacancies",
+			"item": [
+				{
+					"name": "POST /v1/vacancies",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"qtd\": 1,\n\t\"reserve\": true,\n\t\"region_id\":       \"18aa775a-476b-40d4-adce-841824b86800\",\n\t\"call_id\":         \"8a8661f5-6aeb-42c5-9c53-7e9500323bb4\",\n\t\"restriction_id\":  \"03f945b0-bfb4-4394-a064-aaab2072c073\",\n\t\"assignment_id\":   \"4fa67155-8286-441e-9dd1-4104f1ea1e8e\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/vacancies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"vacancies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/vacancies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/vacancies/027d0028-f293-4ba2-9820-20cd2907eb51",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"vacancies",
+								"027d0028-f293-4ba2-9820-20cd2907eb51"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /v1/vacancies/:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"qtd\": 69,\n\t\"reserve\": false\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/vacancies/027d0028-f293-4ba2-9820-20cd2907eb51",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"vacancies",
+								"027d0028-f293-4ba2-9820-20cd2907eb51"
+							],
+							"query": [
+								{
+									"key": "X-Access-Token",
+									"value": "{{token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL /v1/vacancies/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/v1/vacancies/027d0028-f293-4ba2-9820-20cd2907eb51",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"vacancies",
+								"027d0028-f293-4ba2-9820-20cd2907eb51"
+							],
+							"query": [
+								{
+									"key": "X-Access-Token",
+									"value": "{{token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Verify",
+			"item": [
+				{
+					"name": "GET /v1/verify/send",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/verify/send",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"verify",
+								"send"
+							]
+						},
+						"description": "Create and send user verfication token"
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/verify/:token",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/verify/ead78c8d4ad6f05f7097ddb781e6064c892f830dd1557bd215a5016f1fa27b63",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"verify",
+								"ead78c8d4ad6f05f7097ddb781e6064c892f830dd1557bd215a5016f1fa27b63"
+							]
+						},
+						"description": "Create and send user verfication token"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "1058cdbf-7961-45d7-9b1a-2f4ac75b1b3c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "38936dfe-501b-4ceb-a0fd-19efd144b691",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
