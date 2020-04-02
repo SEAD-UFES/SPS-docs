@@ -62,8 +62,11 @@ Instalar o git será necessário (dependencia do NPM).
 
 ## 3. Instalar NODE/NPM:
 
+Usamos a última versão LTS do Node (12.* no momento de atualização desse documento). Não é recomendável instalar pelo gerenciador nativo (yum/apt/etc) pois normalmente disponibiliza uma versão mais antiga do pacote.
+
 https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-centos-7  
 https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-debian-9  
+[ou usando o nvm](https://linuxize.com/post/how-to-install-node-js-on-centos-7/#how-to-install-nodejs-and-npm-using-nvm)
 
 ### 3.1. Instalar o node
 
@@ -227,6 +230,10 @@ Editar e salvar o arquivo (chave exadecimal?):
 >        "value": "DDDDDDDD"  
 >    }  
 >]  
+
+Criar arquivo mail.js (use o modelo mail.example.js)
+
+Criar arquivo site.js (use o modelo site.example.js)
 
 #### 5.1.3. migrar database:
 
