@@ -1,8 +1,12 @@
+<!-- @format -->
+
 Modificações do banco: (timestamps, deletedAt, isActive, Constraints)
-Mofificações do modelo: (timestamps, paranoid, deleteMethod)
-Modificações da api: (Delete error, validations)
+
+- Criar migration rebuild: (npx sequelize migration:generate --name rebuild-PasswordRecover) Mofificações do modelo:
+  (timestamps, paranoid, deleteMethod) Modificações da api: (Delete error, validations)
 
 Modulos para alterar:
 
-Users
-Auth e Profile
+- User: ok?
+- PasswordRecover: ok?
+- UserRoles: alterar modelo, alterar api, testar
