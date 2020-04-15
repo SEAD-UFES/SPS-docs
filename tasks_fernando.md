@@ -7,6 +7,6 @@ Modificações do banco: (timestamps, deletedAt, isActive, Constraints)
 
 Modulos para alterar:
 
-- User: ok?
-- PasswordRecover: ok?
-- UserRoles: alterar modelo, alterar api, testar
+- User: ok
+- PasswordRecover: ok
+- UserRoles: ok
