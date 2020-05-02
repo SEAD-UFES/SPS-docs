@@ -2,7 +2,8 @@
 
 ###
 
-Pensar na criação do calendário de eventos.
+Pensar na criação do calendário de eventos.  
+Decisão: Tratar eventos (calendars) separadamente ou em uma unica tabela? R: Uma tabela.
 
 ###
 
@@ -23,3 +24,11 @@ Modulos para alterar:
 - PasswordRecover: ok
 - UserRoles: ok
 - Ainda faltam os outros...
+
+###
+
+Recriar call usando o novo modelo de container/action/reducer/component
+
+###
+
+Remover Notices do front-end Remover notices do back-end
