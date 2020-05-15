@@ -1,30 +1,27 @@
+<!-- @format -->
+
 # client-docs
 
-## Observações sobre publicações:
-- Colocar uma publicação em um modal com observações em html e arquivo associado?
-
 ## Observações sobre inscrições:
+
 - Dados relevantes: (person, vacancy->call->process)
-- 
+-
 
 ## Observações sobre a auth API:
-- BK BUG: authApi.authenticationRequired: Necesssário verificar se o o id decodificado existe na base de dados / devolve um user. Caso contrario, não insere um user na request, necessário para os proximos middlewares. 
 
-## Observações sobre comportamento de aviso:
-- notice:
-  - Um processo pode ter 0 ou 1 noticia.
-  - Usuários sem login / sem permissão: Veem o aviso se estiver visivel. Veem apenas o aviso se ele for exclusivo. Veem o aviso e os outros dados se ele não for exclusivo.
-  - Usuário com permissões: Sempre veem os avisos e o conteúdo.
-  - É possivel listar a noticia(s) de um processo seletivo passando a id do processo como parametro: (/v1/notices?selectiveProcess_id=xxx)
+- BK BUG: authApi.authenticationRequired: Necesssário verificar se o o id decodificado existe na base de dados / devolve
+  um user. Caso contrario, não insere um user na request, necessário para os proximos middlewares.
 
 ## Observações sobre o comportamento dos processos:
+
 - selectiveprocess:
   - Usuários não logados devem ver apenas os processos "visiveis". (ok)
   - Usuários logados sem permissões devem ver apenas os processos "visiveis". (ok)
   - Usuários logados com a permissão "ver processo" em um curso devem poder ver os processos "ocultos" deste curso. (ok)
   - Processos não podem ter Numero/Ano iguais ao mesmo tempo (pendente)
   - BK BUG: Acesse (sem login) /processes e tente filtrar por atribuição o back-end retorna um erro. (resolvido)
-  - BK BUG: Acesse /processes tente filtrar nível e curso ao mesmo tempo.  
+  - BK BUG: Acesse /processes tente filtrar nível e curso ao mesmo tempo.
+
 ```
 (node:13632) UnhandledPromiseRejectionWarning: TypeError: list.split is not a function
 [0]     at validIds (C:\Users\fernando.annecchini\Documents\projetos\SPS\server\app\helpers\listFilters.js:50:12)
@@ -32,16 +29,19 @@
 [0] (node:13632) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 3)
 (quando split é chamada ela já não exite mais?)
 ```
-  - BK BUG: Acesse /processes tente filtrar número do edital. Depois que os numeros de edital (fora do formato) foram inseridos esse filtro não funciona mais.
-  
+
+- BK BUG: Acesse /processes tente filtrar número do edital. Depois que os numeros de edital (fora do formato) foram
+  inseridos esse filtro não funciona mais.
+
 - filtros:
+
   - [Número]
   - [Ano]
   - [Tipo de curso]
   - [Curso]
   - [Tipo de vaga]
-  - [Tem chamada aberta] (avaliar)
-  
+  - [Tem chamada aberta](avaliar)
+
 - call:
   - Criar o campo data de inicio da chamada. (ok)
   - Data de encerramento deve ser maior que data de abertura. (pendente)
@@ -50,8 +50,11 @@
   - Não pode existir número de chamada repetido no mesmo edital (pendente)
 
 ## Observações sobre o sistema de permissões:
+
 - userRole:
-  - Cuidado ao dar permissões "globais" a um papel que será dado em um "curso". Exemplo: Dar permissão de "deletar usuário" ao papel de "coordenador" no curso de "matemática" pode dar permissões para este coordenador "deletar usuário" que não tem nenhuma relação com o curso do mesmo.
+  - Cuidado ao dar permissões "globais" a um papel que será dado em um "curso". Exemplo: Dar permissão de "deletar
+    usuário" ao papel de "coordenador" no curso de "matemática" pode dar permissões para este coordenador "deletar
+    usuário" que não tem nenhuma relação com o curso do mesmo.
   - Não podem existir 2 ou mais userRoles iguais. (pendente)
 - roleType:
   - O roleType "Administrador" não pode ter seu nome alterado. (pendente)
