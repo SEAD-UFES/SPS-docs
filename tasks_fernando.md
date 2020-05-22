@@ -2,8 +2,12 @@
 
 ###
 
-Pensar na criação do calendário de eventos.  
-Decisão: Tratar eventos (calendars) separadamente ou em uma unica tabela? R: Uma tabela.
+- Objetivo: Pensar na criação do calendário de eventos. R: OK.
+- Decisão: Tratar eventos (calendars) separadamente ou em uma unica tabela? R: Uma tabela.
+- Renomear arquivo "onCall" R: OK.
+- Substituir links para callRead R: OK
+- Fazer novo CallDelete R: OK
+- Remover paginas inuteis em call/vacancy
 
 ###
 
