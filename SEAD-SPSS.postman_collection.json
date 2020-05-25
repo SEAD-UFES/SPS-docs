@@ -1,217 +1,11 @@
 {
 	"info": {
-		"_postman_id": "78609d21-6f73-4562-b25b-520f54ee7754",
+		"_postman_id": "aafd94cf-b2ae-455c-a3a8-183e4dc1c9a0",
 		"name": "SEAD-SPSS",
 		"description": "Sistema de Seleção\n---\n\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
-		{
-			"name": "InscriptionEvents",
-			"item": [
-				{
-					"name": "POST /v1/inscriptionevents",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "02c7462d-1272-468f-ae28-8cf800fc81a8",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "X-Access-Token",
-								"type": "text",
-								"value": "{{token}}"
-							},
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"startDate\": \"2020-01-31\",\n\t\"endDate\": \"2020-01-25\",\n\t\"numberOfInscriptionsAllowed\": 3,\n\t\"oneInscriptionPerAssignment\": 2,\n\t\"oneInscriptionPerRegion\": 3,\n\t\"oneInscriptionPerRestriction\": 4\n}"
-						},
-						"url": {
-							"raw": "{{url}}/v1/inscriptionevents",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1",
-								"inscriptionevents"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GET /v1/inscriptionevents",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-Access-Token",
-								"value": "{{token}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{url}}/v1/inscriptionevents",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1",
-								"inscriptionevents"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GET /v1/inscriptionevents/:id",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-Access-Token",
-								"value": "{{token}}",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"id\":\"b8da8578-7a86-4619-aaa1-13a31cb15331\",\n\t\"name\": \"Tutor\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/v1/inscriptionevents/5be8a4c4-de09-41aa-8e36-980a9b0e4106",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1",
-								"inscriptionevents",
-								"5be8a4c4-de09-41aa-8e36-980a9b0e4106"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "PUT /v1/inscriptionevents/:id",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "X-Access-Token",
-								"value": "{{token}}",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"numberOfInscriptionsAllowed\": 42\n}"
-						},
-						"url": {
-							"raw": "{{url}}/v1/inscriptionevents/7f732bc1-4752-42a5-9a70-5136e5533f39",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1",
-								"inscriptionevents",
-								"7f732bc1-4752-42a5-9a70-5136e5533f39"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "DEL /v1/inscriptionevents/:id",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "X-Access-Token",
-								"value": "{{token}}",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"id\":\"b8da8578-7a86-4619-aaa1-13a31cb15331\",\n\t\"name\": \"Tutor\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/v1/inscriptionevents/7f732bc1-4752-42a5-9a70-5136e5533f38",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1",
-								"inscriptionevents",
-								"7f732bc1-4752-42a5-9a70-5136e5533f38"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "1d8447f6-49b8-49c4-81cf-983d11b6ecc1",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"id": "b0580ce1-09b8-4bdf-afbf-0fe5173f3cf1",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			],
-			"protocolProfileBehavior": {}
-		},
 		{
 			"name": "Assignments",
 			"item": [
@@ -260,6 +54,10 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/assignments",
 							"host": [
@@ -268,6 +66,35 @@
 							"path": [
 								"v1",
 								"assignments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/assignments/:id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/v1/assignments/d3d310a2-5eeb-4f7d-885a-006e75ce0b7c",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"assignments",
+								"d3d310a2-5eeb-4f7d-885a-006e75ce0b7c"
 							]
 						}
 					},
@@ -292,17 +119,17 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\":\"b8da8578-7a86-4619-aaa1-13a31cb15331\",\n\t\"name\": \"Tutor\"\n}"
+							"raw": "{\n\t\"name\": \"Tutor teste\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/v1/assignments/c07d0b3e-d3f8-11e9-8442-18a99bfe6608",
+							"raw": "{{url}}/v1/assignments/d3d310a2-5eeb-4f7d-885a-006e75ce0b7c",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"assignments",
-								"c07d0b3e-d3f8-11e9-8442-18a99bfe6608"
+								"d3d310a2-5eeb-4f7d-885a-006e75ce0b7c"
 							]
 						}
 					},
@@ -330,14 +157,14 @@
 							"raw": "{\n\t\"id\":\"b8da8578-7a86-4619-aaa1-13a31cb15331\",\n\t\"name\": \"Tutor\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/v1/assignments/c07d0b3e-d3f8-11e9-8442-18a99bfe6608",
+							"raw": "{{url}}/v1/assignments/d3d310a2-5eeb-4f7d-885a-006e75ce0b7c",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"assignments",
-								"c07d0b3e-d3f8-11e9-8442-18a99bfe6608"
+								"d3d310a2-5eeb-4f7d-885a-006e75ce0b7c"
 							]
 						}
 					},
@@ -455,6 +282,194 @@
 			]
 		},
 		{
+			"name": "Calendars",
+			"item": [
+				{
+					"name": "POST /v1/calendar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"call_id\": \"4e51cfd1-01f6-4ff3-a8e8-2640476e8675\",\n\t\"calendar_id\": \"fb89436e-46ac-43dd-a037-a4c5363596c2\",\n\t\"name\": \"calendário de outra coisa\",\n\t\"ready\": true,\n\t\"start\": \"2020-05-25 20:14:01\",\n\t\"end\": \"2020-05-26 20:14:01\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/calendars",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"calendars"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/calendar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/v1/assignments",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"assignments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/calendars/:id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/v1/calendars/9f48146a-a545-4ca7-81cb-6998d26b2b67",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"calendars",
+								"9f48146a-a545-4ca7-81cb-6998d26b2b67"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /v1/calendars/:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"calendário com nome editado\",\n    \"ready\": false\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/calendars/9f48146a-a545-4ca7-81cb-6998d26b2b67",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"calendars",
+								"9f48146a-a545-4ca7-81cb-6998d26b2b67"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL /v1/calendars/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":\"b8da8578-7a86-4619-aaa1-13a31cb15331\",\n\t\"name\": \"Tutor\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/calendars/9f48146a-a545-4ca7-81cb-6998d26b2b67",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"calendars",
+								"9f48146a-a545-4ca7-81cb-6998d26b2b67"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "1d8447f6-49b8-49c4-81cf-983d11b6ecc1",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b0580ce1-09b8-4bdf-afbf-0fe5173f3cf1",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
 			"name": "Calls",
 			"item": [
 				{
@@ -502,6 +517,10 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/calls/0a89c8fe-2c1b-41e1-8651-5ded72060199",
 							"host": [
@@ -562,6 +581,10 @@
 								"value": "{{token}}"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/calls/df6443c4-0ce6-429b-8e65-de16d6f0652a",
 							"host": [
@@ -614,6 +637,10 @@
 								"value": "{{token}}"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/states/",
 							"host": [
@@ -638,6 +665,10 @@
 								"value": "{{token}}"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/states/0a89c8fe-2c1b-41e1-8651-5ded72060199",
 							"host": [
@@ -662,6 +693,10 @@
 								"value": "{{token}}"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/cities/01965a18-c5fa-4bf9-bd01-609f29b345e6",
 							"host": [
@@ -686,6 +721,10 @@
 								"value": "{{token}}"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/cities/ES/state",
 							"host": [
@@ -780,6 +819,10 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/courses/",
 							"host": [
@@ -1062,6 +1105,215 @@
 			]
 		},
 		{
+			"name": "InscriptionEvents",
+			"item": [
+				{
+					"name": "POST /v1/inscriptionevents",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "02c7462d-1272-468f-ae28-8cf800fc81a8",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"startDate\": \"2020-01-31\",\n\t\"endDate\": \"2020-01-25\",\n\t\"numberOfInscriptionsAllowed\": 3,\n\t\"oneInscriptionPerAssignment\": 2,\n\t\"oneInscriptionPerRegion\": 3,\n\t\"oneInscriptionPerRestriction\": 4\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/inscriptionevents",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"inscriptionevents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/inscriptionevents",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/v1/inscriptionevents",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"inscriptionevents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/inscriptionevents/:id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":\"b8da8578-7a86-4619-aaa1-13a31cb15331\",\n\t\"name\": \"Tutor\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/inscriptionevents/5be8a4c4-de09-41aa-8e36-980a9b0e4106",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"inscriptionevents",
+								"5be8a4c4-de09-41aa-8e36-980a9b0e4106"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /v1/inscriptionevents/:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"numberOfInscriptionsAllowed\": 42\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/inscriptionevents/7f732bc1-4752-42a5-9a70-5136e5533f39",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"inscriptionevents",
+								"7f732bc1-4752-42a5-9a70-5136e5533f39"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL /v1/inscriptionevents/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":\"b8da8578-7a86-4619-aaa1-13a31cb15331\",\n\t\"name\": \"Tutor\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/inscriptionevents/7f732bc1-4752-42a5-9a70-5136e5533f38",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"inscriptionevents",
+								"7f732bc1-4752-42a5-9a70-5136e5533f38"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "1d8447f6-49b8-49c4-81cf-983d11b6ecc1",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b0580ce1-09b8-4bdf-afbf-0fe5173f3cf1",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
 			"name": "People",
 			"item": [
 				{
@@ -1167,6 +1419,10 @@
 								"value": "{{token}}"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/people/51654e09-9bd4-45fb-af48-d69fd350e277",
 							"host": [
@@ -1192,6 +1448,10 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/people/options",
 							"host": [
@@ -1292,6 +1552,10 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/permissions",
 							"host": [
@@ -1387,7 +1651,7 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/home/edo9k/Área de Trabalho/curso-introducao-a-poo-10h.pdf"
+									"src": null
 								},
 								{
 									"key": "valid",
@@ -1431,6 +1695,10 @@
 								"value": "application/json"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/publications/13fddf9e-79fa-48a9-a388-295f754ce6c8",
 							"host": [
@@ -1497,6 +1765,10 @@
 								"value": "application/json"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/publications/549647cc-75a0-42bf-b944-da4fadfb7681",
 							"host": [
@@ -1517,7 +1789,49 @@
 			"name": "PublicationTypes",
 			"item": [
 				{
-					"name": "POST localhost:3000/v1/publicationtypes",
+					"name": "GET /v1/publicationtypes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0350010d-8303-4d15-bc68-152fa5c137d2",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/v1/publicationtypes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"publicationtypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /v1/publicationtypes",
 					"event": [
 						{
 							"listen": "test",
@@ -1562,49 +1876,7 @@
 					"response": []
 				},
 				{
-					"name": "GET localhost:3000/v1/publicationtypes",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "0350010d-8303-4d15-bc68-152fa5c137d2",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{url}}/v1/publicationtypes",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1",
-								"publicationtypes"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GET localhost:3000/v1/publicationtypes/:id",
+					"name": "GET /v1/publicationtypes/:id",
 					"event": [
 						{
 							"listen": "test",
@@ -1647,7 +1919,7 @@
 					"response": []
 				},
 				{
-					"name": "PUT localhost:3000/v1/publicationtypes/:id",
+					"name": "PUT /v1/publicationtypes/:id",
 					"event": [
 						{
 							"listen": "test",
@@ -1693,7 +1965,7 @@
 					"response": []
 				},
 				{
-					"name": "DEL localhost:3000/v1/publicationtypes/:id",
+					"name": "DEL /v1/publicationtypes/:id",
 					"event": [
 						{
 							"listen": "test",
@@ -1760,6 +2032,34 @@
 			"name": "Regions",
 			"item": [
 				{
+					"name": "GET /v1/regions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/v1/regions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"regions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "POST /v1/regions",
 					"request": {
 						"method": "POST",
@@ -1815,14 +2115,14 @@
 							"raw": "{\n\t\"name\": \"Afonso Cláudio 19987\",\n\t\"description\": \"Polo de Apoio Presencial UAB de Afonso Cláudio\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/v1/regions/db8ecbd0-1366-4b82-bc22-95e2bae2da46",
+							"raw": "{{url}}/v1/regions/3415c528-26ee-4927-b9cd-ecfffe7021fc",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"regions",
-								"db8ecbd0-1366-4b82-bc22-95e2bae2da46"
+								"3415c528-26ee-4927-b9cd-ecfffe7021fc"
 							]
 						}
 					},
@@ -1850,38 +2150,43 @@
 							"raw": "{\n\t\"name\": \"Afonso Cláudio 19987\",\n\t\"description\": \"Polo de Apoio Presencial UAB de Afonso Cláudio\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/v1/regions/db8ecbd0-1366-4b82-bc22-95e2bae2da46",
+							"raw": "{{url}}/v1/regions/3415c528-26ee-4927-b9cd-ecfffe7021fc",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"regions",
-								"db8ecbd0-1366-4b82-bc22-95e2bae2da46"
+								"3415c528-26ee-4927-b9cd-ecfffe7021fc"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "GET /v1/regions",
+					"name": "GET /v1/regions/:id",
 					"request": {
 						"method": "GET",
 						"header": [
 							{
 								"key": "X-Access-Token",
-								"value": "{{token}}",
-								"type": "text"
+								"type": "text",
+								"value": "{{token}}"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{url}}/v1/regions",
+							"raw": "{{url}}/v1/regions/26757e9b-006e-45e4-9399-740ecbce2eee",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
-								"regions"
+								"regions",
+								"26757e9b-006e-45e4-9399-740ecbce2eee"
 							]
 						}
 					},
@@ -1937,6 +2242,10 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/restrictions",
 							"host": [
@@ -1945,6 +2254,35 @@
 							"path": [
 								"v1",
 								"restrictions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /v1/restrictions/:id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/v1/restrictions/ac1a180f-fa97-47b8-b6b9-383f1a3f7738",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"restrictions",
+								"ac1a180f-fa97-47b8-b6b9-383f1a3f7738"
 							]
 						}
 					},
@@ -1972,14 +2310,14 @@
 							"raw": "{\n\t\"name\": \"teste [editado]\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/v1/restrictions/455ecede-f264-4930-a7cc-362bb3a56dfd",
+							"raw": "{{url}}/v1/restrictions/ac1a180f-fa97-47b8-b6b9-383f1a3f7738",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"restrictions",
-								"455ecede-f264-4930-a7cc-362bb3a56dfd"
+								"ac1a180f-fa97-47b8-b6b9-383f1a3f7738"
 							]
 						}
 					},
@@ -2007,14 +2345,14 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{url}}/v1/restrictions/455ecede-f264-4930-a7cc-362bb3a56dfd",
+							"raw": "{{url}}/v1/restrictions/ac1a180f-fa97-47b8-b6b9-383f1a3f7738",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"restrictions",
-								"455ecede-f264-4930-a7cc-362bb3a56dfd"
+								"ac1a180f-fa97-47b8-b6b9-383f1a3f7738"
 							]
 						}
 					},
@@ -2113,6 +2451,10 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/rolepermissions/61378a2c-d9a0-4d83-af06-3eb3ec0ad696",
 							"host": [
@@ -2459,6 +2801,10 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/selectiveprocesses/?",
 							"host": [
@@ -2528,6 +2874,10 @@
 								"value": "{{token}}"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/selectiveprocesses/02f7ede4-d313-4906-9f6d-3f1b91294bf6",
 							"host": [
@@ -2588,6 +2938,10 @@
 								"value": "{{token}}"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/selectiveprocesses/84f11f46-7061-46ff-ac1b-2c6d9baecfc1",
 							"host": [
@@ -2625,8 +2979,7 @@
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Steps",
@@ -2755,6 +3108,10 @@
 								"value": "application/json"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/steps/d06d744a-a338-4aa1-bbf3-a383de57097a",
 							"host": [
@@ -2825,6 +3182,10 @@
 								"value": "application/json"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/steptypes/",
 							"host": [
@@ -2891,6 +3252,10 @@
 								"value": "application/json"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/steptypes/84179b6f-d9c0-4ff8-9e40-fc24de78e69b",
 							"host": [
@@ -2961,6 +3326,10 @@
 								"value": "application/json"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/targets",
 							"host": [
@@ -3056,6 +3425,10 @@
 								"value": "{{token}}"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/users?limit=10&page=1",
 							"host": [
@@ -3101,6 +3474,10 @@
 								"value": "{{token}}"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/users/minimal",
 							"host": [
@@ -3137,6 +3514,10 @@
 								"value": "{{token}}"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/users/f4d51330-ddae-476d-ad18-bec4cd887a4e",
 							"host": [
@@ -3173,6 +3554,10 @@
 								"value": "{{token}}"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/me/",
 							"host": [
@@ -3254,6 +3639,10 @@
 								"value": "{{token}}"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/userroles",
 							"host": [
@@ -3334,6 +3723,10 @@
 								"value": "{{token}}"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/userroles/92bb92cf-4c2a-46f2-bf56-df31d2cd672e",
 							"host": [
@@ -3376,6 +3769,10 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/userroles/939fad31-8dd8-47c4-ace9-95d7019e658a",
 							"host": [
@@ -3452,7 +3849,7 @@
 					"response": []
 				},
 				{
-					"name": "GET /v1/vacancies",
+					"name": "GET /v1/vacancies/:id",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -3462,6 +3859,10 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/vacancies/027d0028-f293-4ba2-9820-20cd2907eb51",
 							"host": [
@@ -3498,7 +3899,7 @@
 							"raw": "{\n\t\"qtd\": 69,\n\t\"reserve\": false\n}"
 						},
 						"url": {
-							"raw": "{{url}}/v1/vacancies/027d0028-f293-4ba2-9820-20cd2907eb51",
+							"raw": "{{url}}/v1/vacancies/027d0028-f293-4ba2-9820-20cd2907eb51?",
 							"host": [
 								"{{url}}"
 							],
@@ -3540,7 +3941,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{url}}/v1/vacancies/027d0028-f293-4ba2-9820-20cd2907eb51",
+							"raw": "{{url}}/v1/vacancies/027d0028-f293-4ba2-9820-20cd2907eb51?",
 							"host": [
 								"{{url}}"
 							],
@@ -3582,6 +3983,10 @@
 								"value": "{{token}}"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/verify/send",
 							"host": [
@@ -3614,6 +4019,10 @@
 								"value": "{{token}}"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/v1/verify/ead78c8d4ad6f05f7097ddb781e6064c892f830dd1557bd215a5016f1fa27b63",
 							"host": [
@@ -3629,8 +4038,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		}
 	],
 	"event": [
@@ -3654,6 +4062,5 @@
 				]
 			}
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
