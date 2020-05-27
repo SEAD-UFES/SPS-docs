@@ -2,15 +2,6 @@
 
 ###
 
-- Objetivo: Pensar na criação do calendário de eventos. R: OK.
-- Decisão: Tratar eventos (calendars) separadamente ou em uma unica tabela? R: Uma tabela.
-- Renomear arquivo "onCall" R: OK.
-- Substituir links para callRead R: OK
-- Fazer novo CallDelete R: OK
-- Remover paginas inuteis em call/vacancy
-
-###
-
 Reformular auth no backend e no frontend
 
 ###
@@ -31,8 +22,14 @@ Modulos para alterar:
 
 ###
 
-Recriar call usando o novo modelo de container/action/reducer/component
+Remover Notices do front-end Remover notices do back-end. (Aguardando resultado.)
 
 ###
 
-Remover Notices do front-end Remover notices do back-end
+- Nova feature inscrições:
+- - Verificar o que temos no backend.
+- - Definir o escopo do que será feito.
+- - Criar o modelo ER no diagrama do workbench.
+- - Criar interfaces React:
+- - Implementar modelos no backend:
+- - Implementar logica React:
