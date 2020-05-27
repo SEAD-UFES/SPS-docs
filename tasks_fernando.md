@@ -28,7 +28,9 @@ Remover Notices do front-end Remover notices do back-end. (Aguardando resultado.
 
 - Nova feature inscrições:
 - - Verificar o que temos no backend.
-- - Definir o escopo do que será feito.
+- - Definir o escopo do que será feito:
+- - - Operador pode (criar/atualizar/excluir) um inscription-event associado a um calendar.
+- - - Usuários logados podem (criar/deletar) inscriptions associadas a um inscription-event.
 - - Criar o modelo ER no diagrama do workbench.
 - - Criar interfaces React:
 - - Implementar modelos no backend:
