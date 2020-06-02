@@ -35,3 +35,8 @@ Remover Notices do front-end Remover notices do back-end. (Aguardando resultado.
 - - Criar interfaces React:
 - - Implementar modelos no backend:
 - - Implementar logica React:
+
+###
+
+- npx sequelize migration:generate --name rebuild-PasswordRecover
+- npx sequelize seed:generate --name demo-user
