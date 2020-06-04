@@ -1,6 +1,6 @@
 <!-- @format -->
 
-# Events
+# Events (Calendars)
 
 ## Definição:
 
@@ -11,12 +11,11 @@ recursos, periodo de entrevistas.
 
 - id
 - call_id
+- calendar_id (Calendar do qual este calendar depende)
 - name
-- type
-- ready
-- dependsOn
 - start
 - end
+- ready
 
 ## Regras:
 
