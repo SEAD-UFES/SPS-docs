@@ -8,7 +8,12 @@
 
 - Coluna isActive virtual na tabela (Para que seja possivel criar uma chave única e permitir itens "unicos" porém com
   apenas 1 ativo por vez.)
-- Chave única (Para garantir a integridade do banco de dados.)
+- Chave única (Para garantir a integridade do banco de dados.) dentro do segundo {} em define.
+
+```
+"uniqueKeys": { "col1_col2_unique": { "fields": ["col1","col2"], customIndex: true } }
+```
+
 - Método beforeDestroy no modelo (Para verificar restrições não podem mais ser feitas no banco e ações em modelos
   relacionados que devem ser feitas aqui para permitir composição.)
 - Nas chamadas de destroy usar "individualHooks:true" (Para que o hook beforeDestroy seja chamado.)
