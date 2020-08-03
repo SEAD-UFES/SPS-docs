@@ -34,10 +34,8 @@ Modulos para alterar:
 - - Implementar modelos no backend:
 - - Implementar logica React:
 
-Lista de inscritos: formatar tabela.  
-Deletar minha inscrição.  
-Pergunta: Onde vou exibir o link para inscrições?  
-Tarefa: Revisar comportamento dos breadcrumbs.
+- Tarefa: Revisar comportamento dos breadcrumbs.
+- Tarefa: substituir /process/:id pelo /process2/read/:id com a feature 'inscrições abertas'
 
 ###
 
@@ -63,3 +61,5 @@ Problemas para resolver:
 
 - CalendarRead esta mostrando a lista para "criar eventos" por um breve periodo antes de mostrar o evento que ela
   possui.
+- Redirecionamento de /inscription-event/list para /inscription-event/read quando só existe 1 IE acontece como deveria
+  Mas: Não é possivel usar o botão voltar para voltar a pagina do edital.
