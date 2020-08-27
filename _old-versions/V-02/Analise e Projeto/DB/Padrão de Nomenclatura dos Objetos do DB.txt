@@ -1,0 +1,48 @@
+== Nome das Tabelas ==
+[NomeDoSchema].[NomeDoObjeto] (Singular)
+
+Ex.: SystemFoo.Person
+
+
+== Nome da Tabela de Simples Associação
+[NomeDoSchema].[Tabela1]_[Tabela2]
+
+Ex.: SystemFoo.Person_Adress
+
+
+== Nome de Coluna ==
+[NomeDoAtributoDoObjeto] (Singular)
+
+Ex.: Name
+
+
+== Nome de Chave Primária para Objetos ==
+[NomeDoObjeto]OID
+
+Ex.: PersonOID
+
+
+== Nome de Chave Primária para Tabela de Não Objetos ==
+[NomeDaTabela]ID
+
+Ex.: LogID
+
+== Nome de chaves FK ==
+[AbreviaçãoDoNomeDaTabelaReferenciadora]_[AbreviaçãoDoNomeDaTabelaReferenciada]_[NomeDaColunaReferenciada]
+
+Ex.: Adr_Per_PersonOID
+
+
+
+== Nome Constraint FK sem identidade própria ==
+FK_[AbreviaçãoDoNomeDaTabelaReferenciadora]_[AbreviaçãoDoNomeDaTabelaReferenciada]_[NomeDaColunaReferenciada]
+
+Ex.: FK_Father	_Per_PersonOID
+
+
+
+== Nome Constraint FK com identidade própria ==
+FK_[NomeDaColuna]_[AbreviaçãoDoNomeDaTabelaReferenciada]_[NomeDaColunaReferenciada]
+
+Ex.: FK_Father	_Per_PersonOID
+

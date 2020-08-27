@@ -1,0 +1,4 @@
+IP: 172.30.4.82
+Porta: 3306
+User: usr_spss
+Password: T4N5deb7ugn2QhN4

@@ -1,0 +1,18 @@
+Baixe e instale o OpenSSL
+https://sourceforge.net/projects/openssl/
+
+Configura as Variáveis de ambiente:
+Path = C:\Program Files (x86)\GnuWin32\bi
+OPENSSL_CONF = C:\Program Files (x86)\GnuWin32\share\openssl.cnf
+
+Na linha de comnado gere a private key
+openssl genrsa 2048 > private.pem
+==> The genrsa command generates an RSA private key.
+
+Na linha de comnado gere o self signed certificate
+openssl req -x509 -days 1000 -new -key private.pem -out public.pem
+==> The req command primarily creates and processes certificate requests in PKCS#10 format. It can additionally create self signed certificates for use as root CAs for example.
+
+Se necessário, crie o PFX
+openssl pkcs12 -export -in public.pem -inkey private.pem -out mycert.pfx
+==> The pkcs12 command allows PKCS#12 files (sometimes referred to as PFX files) to be created and parsed. PKCS#12 files are used by several programs including Netscape, MSIE and MS Outlook.

@@ -1,0 +1,91 @@
+Edital
++Definição da Etapa
++Definição das atribuições
++Chamada
+ +Execução Etapa
+
+Sistema Editais Sead
+
++Serviço de Criação do Edital (Datas, Chamadas, Vagas)
+ +Lançamento de Chamadas
++Serviço de Publicação
++Serviço de Inscrição / Envio de Informações
++Serviço de Avaliação
++
+
+
+
+
+
+== Para publicar ==
+Do Edital é preciso saber:
+- Numero Edital
+- Chamada
+- Atribuições
+- Polos
+
+Dos documentos a serem publicados por fora ou por dentro do sistema é preciso saber:
+
+
+
+
+
+
+- Tipo
+  +Edital[Processo Seletivo]
+  +Edital Retificado [Processo Seletivo]
+  +Calendário [chamada] 
+  +Calendário retificado [chamada]
+  +Resultado [chamada - etapa - atribuição]
+  +Resultado pós-recurso [chamada - etapa - atribuição]
+  +Resultado retificado [chamada - etapa - atribuição]
+  +Resultado retificado pós-recurso [chamada - etapa - atribuição]
+  +Outros*
+
+  *Pertencentes ao Edital (Nó-Pai)
+
+chamada
+etapa
+atribuição
+
+====
+
+
+***  Verificar se tem como criar a mesma vaga mais de 1 vez
+
+
+=======
+
+
+Criar serviço para alimentar página do site com ocorrencias em editais
+
+
+
+====
+
+
+- Atribuir Papel Admin
+- Gerenciar Usuários
+- Gerenciar Curso
+- Gerenciar PS
+- Gerenciar Chamada
+- Gerenciar Etapa
+- Gerenciar Publicação
+
+
+Criar estrutura de pastas para abrigar publicações
+
+#PS XXXX/AA
+   |
+   Edital_XXXX-AA.pdf
+   OutroDucumento.pdf
+   #ChamadaX
+       |
+       Calendario.pdf
+       OutroDucumento.pdf
+       #EtapaX
+          |
+          Resultado_PreRecurso.pdf
+          Resultado_PosRecurso.pdf
+          OutroDucumento.pdf
+          

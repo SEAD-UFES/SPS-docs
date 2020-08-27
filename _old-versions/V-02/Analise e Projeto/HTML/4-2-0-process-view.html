@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+      integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"
+    ></script>
+    <title>Welcome to DevConnector</title>
+  </head>
+
+  <body>
+    <!-- Navbar (Signed in) -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
+      <div class="container">
+        <a class="navbar-brand" href="landing.html">DevConnector</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#mobile-nav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mobile-nav">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="profiles.html"> Developers </a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="feed.html"> Post Feed </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.html"> Dashboard </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <img
+                  class="rounded-circle"
+                  style="width: 25px;margin-right:5px"
+                  src="https://www.gravatar.com/avatar/anything?s=200&d=mm"
+                  alt=""
+                  title="You must have a Gravatar connected to your email to display an image"
+                />
+                Logout
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Dashboard -->
+    <div class="dashboard">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="display-4">Processo seletivo</h1>
+            <p class="lead text-muted">001/2018 - Licenciatura em Pedagogia</p>
+
+            <!-- Dashboard Actions -->
+            <div class="btn-group mb-4" role="group">
+              <a href="4-2-01-process-edit.html" class="btn btn-light">
+                <i class="fas fa-user-circle text-info mr-1"></i> Editar
+                Processo
+              </a>
+              <a href="4-2-02-process-call-add.html" class="btn btn-light">
+                <i class="fas fa-user-circle text-info mr-1"></i> Adicionar
+                Chamada
+              </a>
+              <a
+                href="4-2-08-process-publication-add.html"
+                class="btn btn-light"
+              >
+                <i class="fas fa-user-circle text-info mr-1"></i> Adicionar
+                Publicação
+              </a>
+            </div>
+
+            <!-- Dados de usuário -->
+            <div>
+              <h4 class="mb-2">Dados do processo</h4>
+
+              <div class="row">
+                <div class="col-md-2">
+                  <p><strong>Número/Ano:</strong></p>
+                </div>
+                <div class="col-md-10"><p>001/2018</p></div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-2">
+                  <p><strong>Curso:</strong></p>
+                </div>
+                <div class="col-md-10"><p>Licenciatura Pedagogia</p></div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-2">
+                  <p><strong>Visibilidade:</strong></p>
+                </div>
+                <div class="col-md-10"><p>Processo oculto</p></div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-2">
+                  <p><strong>Descrição:</strong></p>
+                </div>
+                <div class="col-md-10">
+                  <p>
+                    njasndkjasndasnd kjasd nklasjd nkljasdnlkjas dnkajsd
+                    nkajsdnlkajsdn,.as ndkjasndasoidna.sdn blaisnd.,as
+                    ndlkjasdnjkasd nlkasjdn.kjas dn.akjsd n.askmdnals kjd
+                    naslkjdn askjdln as.d,j nasldkjnasd.,nasd
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Publicações -->
+            <div class="row">
+              <div class="col-md-12">
+                <h4 class="mb-2">Publicações do edital</h4>
+                <ul class="timeline">
+                  <li>
+                    <a target="_blank" href="https://www.totoprayogo.com/#">
+                      21/11/2018 | Edital | Comunicado de cancelamento do edital
+                    </a>
+                    <a href="4-2-09-process-publication-edit.html"
+                      ><i class="far fa-edit"></i>
+                    </a>
+                    <p>
+                      Edital cancelado devido a irregularidades na estrutura do
+                      edital.
+                    </p>
+                  </li>
+
+                  <li>
+                    <a target="_blank" href="https://www.totoprayogo.com/#">
+                      09/10/2018 | Edital | Edital Retificado 001/2018
+                    </a>
+                    <a href="4-2-09-process-publication-edit.html">
+                      <i class="far fa-edit"></i>
+                    </a>
+                    <p>
+                      Modificação nas regras de avaliação do edital. Definição
+                      de local de entrevistas.
+                    </p>
+                  </li>
+
+                  <li>
+                    <a class="isDisabled"
+                      >21/09/2018 | Edital | Edital 001/2018
+                    </a>
+                    <a href="4-2-09-process-publication-edit.html">
+                      <i class="far fa-edit"></i>
+                    </a>
+                    <p>
+                      Publicação inicial do Edital 001/2018. Ele também define a
+                      primeira chamada.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Chamadas -->
+            <div>
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    id="home-tab"
+                    data-toggle="tab"
+                    href="#home"
+                    role="tab"
+                    aria-controls="home"
+                    aria-selected="true"
+                    ><h4 class="mb-2">Chamada 1</h4></a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    id="profile-tab"
+                    data-toggle="tab"
+                    href="#profile"
+                    role="tab"
+                    aria-controls="profile"
+                    aria-selected="false"
+                    ><h4 class="mb-2">Chamada 2</h4></a
+                  >
+                </li>
+              </ul>
+
+              <div class="tab-content" id="myTabContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="home"
+                  role="tabpanel"
+                  aria-labelledby="home-tab"
+                >
+                  <div style="margin-bottom: 10px"></div>
+
+                  <!-- Dashboard Actions -->
+                  <div class="btn-group mb-4" role="group">
+                    <a
+                      href="4-2-03-process-call-edit.html"
+                      class="btn btn-light"
+                    >
+                      <i class="fas fa-user-circle text-info mr-1"></i> Editar
+                      Chamada
+                    </a>
+                    <a
+                      href="4-2-02-process-call-add.html"
+                      class="btn btn-light"
+                    >
+                      <i class="fas fa-user-circle text-info mr-1"></i>
+                      Adicionar Etapa
+                    </a>
+                    <a
+                      href="4-2-06-process-call-vacancy-add.html"
+                      class="btn btn-light"
+                    >
+                      <i class="fas fa-user-circle text-info mr-1"></i>
+                      Adicionar Vaga
+                    </a>
+                    <a
+                      href="4-2-08-process-publication-add.html"
+                      class="btn btn-light"
+                    >
+                      <i class="fas fa-user-circle text-info mr-1"></i>
+                      Adicionar Publicação
+                    </a>
+                  </div>
+
+                  <!-- informações de status -->
+                  <div class="row">
+                    <div class="col-md-2">
+                      <p><strong>Status:</strong></p>
+                    </div>
+                    <div class="col-md-10"><p>Chamada aberta</p></div>
+                  </div>
+
+                  <!-- Calendário -->
+                  <div>
+                    <h4 class="mb-2">Calendário</h4>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Evento</th>
+                          <th>Data/Periodo</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Periodo de inscrições</td>
+                          <td>01/01/2018 - 01/02/2018</td>
+                          <td>
+                            <a href="4-2-01-process-edit.html">
+                              <i class="far fa-edit"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Etapa 01 - Resultado</td>
+                          <td>01/02/2018</td>
+                          <td>
+                            <a href="4-2-05-process-call-step-edit.html">
+                              <i class="far fa-edit"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Etapa 01 - Periodo de recursos</td>
+                          <td>01/02/2018 - 05/02/2018</td>
+                          <td>
+                            <a href="4-2-05-process-call-step-edit.html">
+                              <i class="far fa-edit"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Etapa 01 - Resultado pós-recursos</td>
+                          <td>06/02/2018</td>
+                          <td>
+                            <a href="4-2-05-process-call-step-edit.html">
+                              <i class="far fa-edit"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Etapa 02 - Resultado</td>
+                          <td>11/02/2018</td>
+                          <td>
+                            <a href="4-2-05-process-call-step-edit.html">
+                              <i class="far fa-edit"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Etapa 02 - Periodo de recursos</td>
+                          <td>11/02/2018 - 15/02/2018</td>
+                          <td>
+                            <a href="4-2-05-process-call-step-edit.html">
+                              <i class="far fa-edit"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Etapa 02 - Resultado pós-recursos</td>
+                          <td>16/02/2018</td>
+                          <td>
+                            <a href="4-2-05-process-call-step-edit.html">
+                              <i class="far fa-edit"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Finalização da Chamada</td>
+                          <td>01/03/2018</td>
+                          <td>
+                            <a href="4-2-01-process-edit.html">
+                              <i class="far fa-edit"></i>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <!-- Vagas oferecidas -->
+                  <div>
+                    <h4 class="mb-2">Vagas oferecidas</h4>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Atribuição</th>
+                          <th>Local</th>
+                          <th>Restrição</th>
+                          <th>Vagas</th>
+                          <th>Reserva</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Tutor presencial</td>
+                          <td>Aracruz</td>
+                          <td>-</td>
+                          <td>10</td>
+                          <td>Sim</td>
+                          <td>
+                            <a href="4-2-07-process-call-vacancy-edit.html">
+                              <i class="far fa-edit"></i>
+                            </a>
+                            <a class="text-danger" href="">
+                              <i class="fas fa-trash-alt"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Tutor presencial</td>
+                          <td>Vila Velha</td>
+                          <td>-</td>
+                          <td>6</td>
+                          <td>Sim</td>
+                          <td>
+                            <a href="4-2-07-process-call-vacancy-edit.html">
+                              <i class="far fa-edit"></i>
+                            </a>
+                            <a class="text-danger" href="">
+                              <i class="fas fa-trash-alt"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Tutor a distância</td>
+                          <td>-</td>
+                          <td>Cota para Negros</td>
+                          <td>7</td>
+                          <td>Sim</td>
+                          <td>
+                            <a href="4-2-07-process-call-vacancy-edit.html">
+                              <i class="far fa-edit"></i>
+                            </a>
+                            <a class="text-danger" href="">
+                              <i class="fas fa-trash-alt"></i>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <!-- Publicações -->
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h4 class="mb-2">Publicações da chamada</h4>
+                      <ul class="timeline">
+                        <li>
+                          <a
+                            target="_blank"
+                            href="https://www.totoprayogo.com/#"
+                          >
+                            09/10/2018 | Etapa 02 | Periodo das entrevistas
+                          </a>
+                          <a href="4-2-09-process-publication-edit.html"
+                            ><i class="far fa-edit"></i>
+                          </a>
+                          <p>
+                            Seguem os locais e datas de entrevista. Também
+                            entraremos em contato para confirmar com os
+                            canditados.
+                          </p>
+                        </li>
+
+                        <li>
+                          <a
+                            target="_blank"
+                            href="https://www.totoprayogo.com/#"
+                          >
+                            09/10/2018 | Etapa 01 | Resultado pós recurso da
+                            Etapa 01
+                          </a>
+                          <a href="4-2-09-process-publication-edit.html"
+                            ><i class="far fa-edit"></i>
+                          </a>
+                          <p>Resultados da prova de títulos.</p>
+                        </li>
+
+                        <li>
+                          <a
+                            target="_blank"
+                            href="https://www.totoprayogo.com/#"
+                          >
+                            09/10/2018 | Etapa 01 | Resultado da Etapa 01
+                          </a>
+                          <a href="4-2-09-process-publication-edit.html"
+                            ><i class="far fa-edit"></i>
+                          </a>
+                          <p>Resultados da prova de títulos.</p>
+                        </li>
+
+                        <li>
+                          <a
+                            target="_blank"
+                            href="https://www.totoprayogo.com/#"
+                          >
+                            09/10/2018 | Chamada 01 | Retificação do calendário
+                          </a>
+                          <a href="4-2-09-process-publication-edit.html"
+                            ><i class="far fa-edit"></i>
+                          </a>
+                          <p>
+                            As datas foram alteradas devido ao atraso na
+                            publicação de resultados da etapa 01.
+                          </p>
+                        </li>
+
+                        <li>
+                          <a class="isDisabled">
+                            21/09/2018 | Chamada 01 | Definição de calenário
+                          </a>
+                          <a href="4-2-09-process-publication-edit.html"
+                            ><i class="far fa-edit"></i>
+                          </a>
+                          <p>Documento que contem primeiro calendário.</p>
+                        </li>
+
+                        <li>
+                          <a
+                            target="_blank"
+                            href="https://www.totoprayogo.com/#"
+                          >
+                            21/09/2018 | Chamada 01 | Definição de vagas
+                          </a>
+                          <a href="4-2-09-process-publication-edit.html"
+                            ><i class="far fa-edit"></i>
+                          </a>
+                          <p>
+                            Documento que contem primeira definição de vagas.
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="profile"
+                  role="tabpanel"
+                  aria-labelledby="profile-tab"
+                >
+                  <p>tab2</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white mt-5 p-4 text-center">
+      Copyright &copy; 2018 Dev Connector
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
