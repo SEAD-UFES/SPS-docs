@@ -2,6 +2,24 @@
 
 ###
 
+- Nova feature inscrições:
+- - Verificar o que temos no backend.
+- - Definir o escopo do que será feito:
+- - - Operador pode (criar/atualizar/excluir) um inscription-event associado a um calendar.
+- - - Usuários logados podem (criar/deletar) inscriptions associadas a um inscription-event.
+- - Criar o modelo ER no diagrama do workbench.
+- - - Criado
+- - Criar interfaces React:
+- - - InscriptionEvent C(R)UDL
+- - Implementar modelos no backend:
+- - Implementar logica React:
+
+01 - Revisar interfaces do sistema de inscrições.  
+02 - Erro: Redirecionamento de /inscription-event/list para /inscription-event/read quando só existe 1 o redirect IE
+acontece como deveria Mas: Não é possivel usar o botão voltar para voltar a pagina do edital.
+
+###
+
 Reformular auth no backend e no frontend
 
 ###
@@ -19,20 +37,6 @@ Modulos para alterar:
 - PasswordRecover: ok
 - UserRoles: ok
 - Ainda faltam os outros...
-
-###
-
-- Nova feature inscrições:
-- - Verificar o que temos no backend.
-- - Definir o escopo do que será feito:
-- - - Operador pode (criar/atualizar/excluir) um inscription-event associado a um calendar.
-- - - Usuários logados podem (criar/deletar) inscriptions associadas a um inscription-event.
-- - Criar o modelo ER no diagrama do workbench.
-- - - Criado
-- - Criar interfaces React:
-- - - InscriptionEvent C(R)UDL
-- - Implementar modelos no backend:
-- - Implementar logica React:
 
 ###
 
@@ -58,6 +62,3 @@ Problemas para resolver:
 
 - Alerta: CalendarRead esta mostrando a lista para "criar eventos" por um breve periodo antes de mostrar o evento que
   ela possui.
-
-- Erro: Redirecionamento de /inscription-event/list para /inscription-event/read quando só existe 1 o redirect IE
-  acontece como deveria Mas: Não é possivel usar o botão voltar para voltar a pagina do edital.
