@@ -2,28 +2,6 @@
 
 ###
 
-- Nova feature inscrições:
-- - Verificar o que temos no backend.
-- - Definir o escopo do que será feito:
-- - - Operador pode (criar/atualizar/excluir) um inscription-event associado a um calendar.
-- - - Usuários logados podem (criar/deletar) inscriptions associadas a um inscription-event.
-- - Criar o modelo ER no diagrama do workbench.
-- - - Criado
-- - Criar interfaces React:
-- - - InscriptionEvent C(R)UDL
-- - Implementar modelos no backend:
-- - Implementar logica React:
-
-01 - Revisar interfaces do sistema de inscrições.  
-02 - Erro: Redirecionamento de /inscription-event/list para /inscription-event/read quando só existe 1 o redirect IE
-acontece como deveria Mas: Não é possivel usar o botão voltar para voltar a pagina do edital.
-
-###
-
-Reformular auth no backend e no frontend
-
-###
-
 Aplicar paranoid e timestamps nos modelos.
 
 Modificações do banco: (timestamps, deletedAt, isActive, Constraints)
@@ -36,7 +14,14 @@ Modulos para alterar:
 - User: ok
 - PasswordRecover: ok
 - UserRoles: ok
+- RoleTypes: ok
+- RolePermissions: ok
+- Permission: em andamento...
 - Ainda faltam os outros...
+
+###
+
+Reformular auth no backend e no frontend
 
 ###
 
@@ -48,6 +33,12 @@ Lembrete:
 
 ####
 
+Possiveis bugs:
+
+Pelo que li do código, se você ficar atualizando incrição, o numero de inscrição muda.
+
+####
+
 Ideias para o futuro:
 
 - Fazer actions devolverem promises para usar 'then' ao inves de 'callback' ?
@@ -55,10 +46,3 @@ Ideias para o futuro:
   parece)
 - Mudar o formato de options (colocar options em cascata) { withVacancy:{ withAssignment: true } }
 - Fazer o "create" usar o parametro id na query e mudar o local de declaração da rota create.
-
-####
-
-Problemas para resolver:
-
-- Alerta: CalendarRead esta mostrando a lista para "criar eventos" por um breve periodo antes de mostrar o evento que
-  ela possui.
