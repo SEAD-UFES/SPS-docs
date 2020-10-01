@@ -11,12 +11,23 @@ Modificações do banco: (timestamps, deletedAt, isActive, Constraints)
 
 Modulos para alterar:
 
-- User: ok
-- PasswordRecover: ok
 - UserRoles: ok
 - RoleTypes: ok
-- RolePermissions: ok
-- Permission: em andamento...
+- RolePermission: ok
+- Permission: ok
+- Target: ok
+- Action: ok
+
+- User: ok
+- PasswordRecover: ok
+- People: ok
+
+- SelectiveProcess: ok
+- Course: ok
+- GraduationType: ok
+
+- proximo: Publication system
+
 - Ainda faltam os outros...
 
 ###
@@ -30,12 +41,6 @@ Lembrete:
 - npx sequelize model:generate --name User --attributes firstName:string
 - npx sequelize migration:generate --name rebuild-PasswordRecover
 - npx sequelize seed:generate --name demo-user
-
-####
-
-Possiveis bugs:
-
-Pelo que li do código, se você ficar atualizando incrição, o numero de inscrição muda.
 
 ####
 

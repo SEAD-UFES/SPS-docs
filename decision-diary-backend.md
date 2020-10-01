@@ -52,3 +52,7 @@ no ato da deleção, checar as restrições e se estiver tudo certo com esse mod
 modelos relacionados. que por sua vez, também farão uma checagem. Se houver qualquer restrição a deleção de algum modelo
 envolvido, toda a transação é desfeita. Então lançamos um erro que pode ser capturada na api que invocou a deleção do
 primeiro modelo da cadeia. (Usos elegante de composição)
+
+2020-10-01  
+Atualizar inscription pode acabar mudando o numero de inscrição. Como inscription não um metodo "update" então, foi
+decidido que ficaria como está.
