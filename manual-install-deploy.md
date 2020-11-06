@@ -323,13 +323,11 @@ Instalar dependencias:
 
 Editar o arquivo spsServer:
 
-> \$ vim src/apis/spsServer.js
+> \$ vim src/config/backend.js
 
 Editar e salvar o arquivo (colocar o endereço que será o backend da aplicação):
 
-> import axios from "axios";
->
-> export default axios.create({ baseURL: "http://servidor.dev.br/api" });
+> export const backendConfig = { spsServerUrl: 'http://localhost:3000' }
 
 #### 5.2.3. Fazer o "deployment" da aplicação:
 
@@ -364,10 +362,19 @@ Edite o arquivo ecosystem.config.js
 
 > \$ vim ecosystem.config.js
 
-Editar e salvar o arquivo:
+Editar e salvar o arquivo nos seguintes trechos:
 
-> apps : [ > { > name : 'sps-client', > script : 'npx', > interpreter : 'none', > args : 'serve build -s', > > > > >
-> env_production : { > NODE_ENV: 'production' > } > } > ]
+```
+apps : [
+  {
+    name : 'sps-client',
+    script : 'npx',
+    interpreter : 'none',
+    args : 'serve build -s',
+    env_production : { NODE_ENV: 'production' }
+  }
+]
+```
 
 Inicie o processo no pm2:
 
