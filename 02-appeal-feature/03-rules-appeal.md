@@ -10,5 +10,9 @@
 - Um recurso só pode se referir a uma inscrição do inscriptionEvent associado ao AppealEvent.
 - Um recurso só pode ser criado pelo canditado, que só pode inserir (appealEvent, inscription, title, description).
 - Um recurso só pode ser deletado se: Não respondido e Dentro do periodo de recurso.
-- Um recurso só pode ser respondido um vez, que só pode inserir (status, justification).
+
+# AppealReply:
+
+- Um recurso só pode ser respondido um vez (apenas uma resposta)
 - Apenas usuários com permissão podem responder a recursos.
+- Uma respota a recurso não pode ser deletada.
