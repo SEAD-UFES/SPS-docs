@@ -24,3 +24,5 @@ Criar sistema de Recursos.
 - npx sequelize model:generate --name User --attributes firstName:string
 - npx sequelize migration:generate --name rebuild-PasswordRecover
 - npx sequelize seed:generate --name demo-user
+
+- npx sequelize db:seed --seed 00000000000000-seed-name
