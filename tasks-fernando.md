@@ -7,6 +7,8 @@
 Criar sistema de Recursos.
 
 - Revisar interface a esboçar como serão as telas do sistema de recurso.
+- Apenas usuários com permissão podem ver referencias a (Responder recurso) (em PetitionRead)
+- criando uma petitionReply que já existe. em uma processo encerrado.
 
 ### Tarefas para o futuro (Passo para trás):
 
