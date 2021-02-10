@@ -6,20 +6,19 @@
 
 Criar sistema de Recursos.
 
-- Revisar interface a esboçar como serão as telas do sistema de recurso.
-- Apenas usuários com permissão podem ver referencias a (Responder recurso) (em PetitionRead)
-- criando uma petitionReply que já existe. em uma processo encerrado.
-
 ### Tarefas para o futuro (Passo para trás):
 
 - Remover o botão "inscrever-se" de "inscription-event" quando o periodo de inscrição não estiver ativo.
-- Fazer o "create" usar o parametro id na query e mudar o local de declaração da rota create.
+- Fazer o "create" usar o parametro id na queryString e mudar o local de declaração da rota create.
 - Problema de navegação (voltar/carregar em pontos estranhos da pagina). Talvez sempre colocar o foco no topo?
 - Reformular auth no backend e no frontend
 - Fazer actions devolverem promises para usar 'then' ao inves de 'callback' ?
 - Criar um reducer para a id da url para não precisar colocar ele como parametro em mapStateToProps? (tem mais do que
   parece)
 - Mudar o formato de options (colocar options em cascata) { withVacancy:{ withAssignment: true } }
+- implementar um controle de seeds para que seja possivel inplementa-las e remove-las como se faz com as migrations (o
+  sequelize permite, mas tem que estudar)
+  - Implementar uma mascara para o CPF.
 
 ### Lembretes:
 
