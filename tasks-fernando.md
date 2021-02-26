@@ -2,23 +2,38 @@
 
 ### Coisas para resolver:
 
+#### Ajustes para colocar no ar o sistema:
+
+- Colocar o sistema de emails para funcionar.
+- Melhorar a data de encerramento do calendário.
+- Colocar https sistema de teste. (colocar ip valido).
+- Colocar tip em todos os "icon Botton".
+- Ajustar css do user-profile (view, edit-user, edit-person)
+- Ajustar css de um processo oculto.
+- Problema de navegação (voltar/carregar em pontos estranhos da pagina). Talvez sempre colocar o foco no topo?
+- (?) Criar uma tela de "cadastro efetuado como sucesso
+- (?) Se o cara logar em uma pagina não autorizada direcionar para pagina inicial?
+- (?) Remover a coluna pronto para o usuário comum? Alterar o nome?
+
+- Não logado.
+- Comum.
+- Administrador.
+
 ### Passo para frente:
 
-Criar sistema de Recursos.
+Feature: Inscrições com dados adicionais
+
+- Tipo: Questões de multipla escolha. (escolha unica ou multipla) (Com envio de arquivo(s) opcional.)
+- Tipo: Questões discursivas. (Com envio de arquivo(s) opcional.)
+- Tipo: Envio de arquivos(s).
+- Quando necessário, marcar dado adicional como obrigatório?
 
 ### Tarefas para o futuro (Passo para trás):
 
-- Remover o botão "inscrever-se" de "inscription-event" quando o periodo de inscrição não estiver ativo.
-- Fazer o "create" usar o parametro id na queryString e mudar o local de declaração da rota create.
+- Reformular auth no backend e no frontend.
+- Remake das paginas (ProcessRead, ProcessList, ProcessCreate, ProcessUpdate) usando a nova arquitetura.
 - Problema de navegação (voltar/carregar em pontos estranhos da pagina). Talvez sempre colocar o foco no topo?
-- Reformular auth no backend e no frontend
-- Fazer actions devolverem promises para usar 'then' ao inves de 'callback' ?
-- Criar um reducer para a id da url para não precisar colocar ele como parametro em mapStateToProps? (tem mais do que
-  parece)
-- Mudar o formato de options (colocar options em cascata) { withVacancy:{ withAssignment: true } }
-- implementar um controle de seeds para que seja possivel inplementa-las e remove-las como se faz com as migrations (o
-  sequelize permite, mas tem que estudar)
-  - Implementar uma mascara para o CPF.
+- Substituir as chamadas de selectorsV1 pelos selectorsV2.
 
 ### Lembretes:
 

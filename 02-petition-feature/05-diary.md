@@ -14,3 +14,8 @@
 ### 2020-12-22
 
 - Adicionando novo filtro em inscriptions, para baixar apenas as inscrições do usuário.
+
+### 2021-02-22
+
+- Decidido que usar callback é mais poderoso que usar promisses. Porque com o novo formato das options será possivel
+  chamar callbacks para cada item dentro das options.
