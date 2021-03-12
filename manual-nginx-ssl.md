@@ -58,8 +58,8 @@ $ sudo ln -s /snap/bin/certbot /usr/bin/certbot
 
 ## 2 Gerar certificados
 
-https://certbot.eff.org/lets-encrypt/centosrhel7-nginx
-https://linuxscriptshub.com/install-letsencrypt-ssl-nginx-centos-6/ (usei mais este)
+https://certbot.eff.org/lets-encrypt/centosrhel7-nginx  
+https://linuxscriptshub.com/install-letsencrypt-ssl-nginx-centos-6/ (usei mais este)  
 https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-nginx-on-centos-7
 
 Problema: Tivemos problemas para gerar certificado pois nossas url de teste continha "\_" que é uma caractere invlálido.
@@ -126,7 +126,7 @@ server {
 }
 ```
 
-4.2 - O segundo arquivo (teste-editais.sead.ufes.br):
+4.2 - O segundo arquivo (teste-editais.sead.ufes.br.conf):
 
 Aqui temos a configuração de um dominio pelo qual o servidor responde:
 
@@ -177,7 +177,7 @@ server {
 
 4.3 - Outros arquivo em (/etc/nginx/sites-available):
 
-Outros dominios que tem crtificados criados em (/etc/letsencrypt/live):  
+Outros dominios que tem certificados criados em (/etc/letsencrypt/live):  
 As configurações ssl de outros dominios serão configurados da mesma forma que o segundo arquivo.
 
 ## 5 - Ajustes finais.
