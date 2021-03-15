@@ -4,14 +4,27 @@ Aqui vamos descrever como foi o processo para implemetar ssl no servidor nginx d
 
 # Configurar ssl em servidor nginx.
 
-## 1 instalação do certbot
+# 1 Instalar LEMP
 
-1.1 - Para instalar o certbot usamos os seguintes links de referencia:
+(como não lembro o tutorial que usei, coloquei um link de referencia)
+https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-centos-7
+
+Não sei o motivo, mas o tutorial diz que é preciso ter LEMP (Linux + nginx + MySQL + PHP) instalados.  
+Linux já es tá ok.  
+O nginx também.  
+O mySQL pe que me deixa confuso, por que?  
+O PHP acredito que seja para rodas algum script do certbot.
+
+Acredito que
+
+## 2 instalação do certbot
+
+2.1 - Para instalar o certbot usamos os seguintes links de referencia:
 
 https://certbot.eff.org  
 https://certbot.eff.org/lets-encrypt/centosrhel7-nginx
 
-1.2 - Ao consultar o manual de instalação para o CentOS 7 vimos que seria preciso instalar o snapd (gerenciador de
+2.2 - Ao consultar o manual de instalação para o CentOS 7 vimos que seria preciso instalar o snapd (gerenciador de
 pacotes).
 
 https://linuxscriptshub.com/install-letsencrypt-ssl-nginx-centos-6/ (letsencrypt falhou então usei o linka abaixo)
@@ -42,7 +55,7 @@ Para habilitar o classic snap suport(?):
 $ sudo ln -s /var/lib/snapd/snap /snap
 ```
 
-1.3 - Com o snapd instalado, intalar e configurar o certbot
+2.3 - Com o snapd instalado, intalar e configurar o certbot
 
 Para instalar o certbot
 
@@ -56,13 +69,13 @@ Para colocar o comando no bash
 $ sudo ln -s /snap/bin/certbot /usr/bin/certbot
 ```
 
-## 2 Gerar certificados
+## 3 Gerar certificados
 
 https://certbot.eff.org/lets-encrypt/centosrhel7-nginx  
 https://linuxscriptshub.com/install-letsencrypt-ssl-nginx-centos-6/ (usei mais este)  
 https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-nginx-on-centos-7
 
-Problema: Tivemos problemas para gerar certificado pois nossas url de teste continha "\_" que é uma caractere invlálido.
+Problema: Tivemos problemas para gerar certificado pois nossa url de teste continha "\_" que é uma caractere invlálido.
 fizemos a correção.
 
 Observação: Optamos por apenas gerar os certificados (certonly) e fazer as configurações do servidor manualmente.
@@ -80,7 +93,7 @@ $ sudo certbot certonly --nginx
 
 Se tudo correu normalmente suas chaves são geradas em (/etc/letsencrypt/live).
 
-## 3 Gerar server key do servidor nginx
+## 4 Gerar server key do servidor nginx
 
 Para criar a pasta onde a chave será armazenada:
 
@@ -108,12 +121,12 @@ Para gerar a server.csr dentro da pasta:
 \# openssl req -new -key server.key -out server.csr
 ```
 
-## 4 Configurar virtualhosts do servidor nginx
+## 5 Configurar virtualhosts do servidor nginx
 
 Nosso nginx foi configurado com as pastas sites-available e sites-enabled. Na primeira pasta criarmos 3 arquivos. Na
 segunda, links para os arquivos que serão disponibilizados.
 
-4.1 - O primeiro arquivo (000-default.conf):
+5.1 - O primeiro arquivo (000-default.conf):
 
 Este arquivo deve pegar qualquer link que não seja de outros server configurados e devolver uma resposta "vazia" para o
 requisitante:
@@ -126,7 +139,7 @@ server {
 }
 ```
 
-4.2 - O segundo arquivo (teste-editais.sead.ufes.br.conf):
+5.2 - O segundo arquivo (teste-editais.sead.ufes.br.conf):
 
 Aqui temos a configuração de um dominio pelo qual o servidor responde:
 
@@ -175,18 +188,18 @@ server {
 
 ```
 
-4.3 - Outros arquivo em (/etc/nginx/sites-available):
+5.3 - Outros arquivo em (/etc/nginx/sites-available):
 
 Outros dominios que tem certificados criados em (/etc/letsencrypt/live):  
 As configurações ssl de outros dominios serão configurados da mesma forma que o segundo arquivo.
 
-## 5 - Ajustes finais.
+## 6 - Ajustes finais.
 
-5.1 - ajustes nas aplicações node.js que servimos:
+6.1 - ajustes nas aplicações node.js que servimos:
 
 Alguns ajustes no sistema foram efetuadas para o funcionamento correto do das configurações ssl no servidor:
 
-5.1.1 - No sps-server
+6.1.1 - No sps-server
 
 Parar o serviço pm2:
 
@@ -207,7 +220,7 @@ Reiniciar o serviço pm2:
 \# pm2 start sps-server-teste
 ```
 
-5.1.2 - No sps-client
+6.1.2 - No sps-client
 
 Parar o serviço pm2:
 
@@ -235,7 +248,7 @@ Reiniciar o serviço pm2:
 \# pm2 start sps-client-teste
 ```
 
-5.2 - Ajuste no servidor nginx:
+6.2 - Ajuste no servidor nginx:
 
 Checar syntax dos arquivos de configuração:
 
@@ -249,7 +262,7 @@ Reiniciar servidor nginx para aplicar as novas configurações:
 \# systemctl restart nginx
 ```
 
-## 6 - Renovação automática de certificados.
+## 7 - Renovação automática de certificados.
 
 Podemos solicitar ao certbot renovação automatica dos certificados, isso vai colocar um script no "cron" do sistema
 operacional.
