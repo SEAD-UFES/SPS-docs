@@ -13,9 +13,7 @@ Não sei o motivo, mas o tutorial diz que é preciso ter LEMP (Linux + nginx + M
 Linux já es tá ok.  
 O nginx também.  
 O mySQL pe que me deixa confuso, por que?  
-O PHP acredito que seja para rodas algum script do certbot.
-
-Acredito que
+O PHP acredito que seja para rodar algum script do certbot.
 
 ## 2 instalação do certbot
 
